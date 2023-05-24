@@ -1,1 +1,1 @@
-# UyghurHandwriting
+# Uyghur Handwriting Tracing tool
