@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: "./src/Index.tsx", // Path the entry file of the application
@@ -19,7 +18,6 @@ module.exports = {
       hash: true, // append a unique webpack compilation hash to all included scripts and CSS files. - useful for cache busting
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [{ from: path.join("env.js"), to: "env.js" }],
     }),
@@ -39,10 +37,6 @@ module.exports = {
         use: {
           loader: "babel-loader", // selected transpiler
         },
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.svg$/,
