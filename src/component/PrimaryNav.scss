@@ -1,0 +1,82 @@
+@import "./style/component.scss";
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+
+  @media all and (min-width: $bp-md) {
+    justify-content: center;
+  }
+}
+
+/**
+ * Primary nav list
+ * 1) The actual list of nav items
+ */
+.primary-nav__list {
+  @include reset;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: size(4);
+  z-index: 20;
+  @media all and (min-width: $bp-md) {
+    flex-direction: row;
+  }
+}
+
+/**
+ * Primary nav link
+ * 1) Individual link within each primary nav item
+ */
+.primary-nav__link {
+  @include navItemTypography(size(3), 500, #333333, #ff0000);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/**
+ * Primary nav item panel
+ */
+.primary-nav__item-panel {
+  display: none;
+}
+
+.primary-nav--link__underline {
+  display: inline-block;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-size: size(2);
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+  padding-bottom: 3px;
+  transition: color 0.3s, border-bottom-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom-color: #00aa00;
+  }
+
+  &.active {
+    border-bottom-color: #00aa00;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  &:hover::after,
+  &.active::after {
+    background-color: #00aa00;
+  }
+}
