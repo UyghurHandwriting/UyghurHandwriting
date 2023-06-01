@@ -38,7 +38,7 @@ export const PrimaryNavItem = React.forwardRef<
 
   return (
     <li className={componentClassName} {...other} ref={ref}>
-      <a className=".primary-nav--link__underline" href={href}>
+      <a className="primary-nav--link__underline" href={href}>
         <span className="primary-nav--text">{text}</span>
       </a>
       {children && (

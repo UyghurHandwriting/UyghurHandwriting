@@ -26,18 +26,6 @@
 }
 
 /**
- * Primary nav link
- * 1) Individual link within each primary nav item
- */
-.primary-nav__link {
-  @include navItemTypography(size(3), 500, #333333, #ff0000);
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-/**
  * Primary nav item panel
  */
 .primary-nav__item-panel {
@@ -45,23 +33,24 @@
 }
 
 .primary-nav--link__underline {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   position: relative;
-  font-family: Arial, sans-serif;
   font-size: size(2);
   font-weight: bold;
-  color: #333333;
+  color: $color-primary-black;
   text-decoration: none;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
   transition: color 0.3s, border-bottom-color 0.3s;
   cursor: pointer;
 
   &:hover {
-    border-bottom-color: #00aa00;
+    border-bottom-color: $color-primary-green;
   }
 
   &.active {
-    border-bottom-color: #00aa00;
+    border-bottom-color: $color-primary-green;
   }
 
   &::after {
@@ -77,6 +66,6 @@
 
   &:hover::after,
   &.active::after {
-    background-color: #00aa00;
+    background-color: $color-primary-green;
   }
 }
