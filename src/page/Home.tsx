@@ -1,6 +1,6 @@
 import React from "react";
-import { PrimaryNav } from "../component/PrimaryNav";
-import { PrimaryNavItem } from "../component/NavItem";
+import { PrimaryNav } from "../component/Nav/PrimaryNav";
+import { PrimaryNavItem } from "../component/Nav/NavItem";
 
 type Props = {};
 
