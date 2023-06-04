@@ -3,6 +3,6 @@ import "./index.css";
 import { RouterProvider, useNavigate } from "react-router-dom";
 import { browserRouter } from "./app/BrowserRouter";
 
-export const App: React.FC = () => {
+export const App = () => {
   return <RouterProvider router={browserRouter} />;
 };
