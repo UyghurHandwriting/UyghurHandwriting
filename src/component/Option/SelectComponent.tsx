@@ -1,20 +1,36 @@
 import React from 'react';
-import "./index.css"
-interface SelectOption {
+import "./SelectComponent.scss"
+
+export interface SelectOption {
     value: string;
     label: string;
 }
 
-interface SelectData {
+export interface SelectData {
     title: string;
     options: SelectOption[];
 }
 
-interface SelectComponentProps {
-    optionsData: SelectData[];
-}
+const optionsData: SelectData[] = [
+    {
+        title: "Select 1",
+        options: [
+            { value: "1", label: "Option 1" },
+            { value: "2", label: "Option 2" },
+            { value: "3", label: "Option 3" }
+        ]
+    },
+    {
+        title: "Select 2",
+        options: [
+            { value: "4", label: "Option 4" },
+            { value: "5", label: "Option 5" },
+            { value: "6", label: "Option 6" }
+        ]
+    }
+];
 
-const SelectComponent: React.FC<SelectComponentProps> = ({ optionsData }) => {
+const  SelectComponent: React.FC = () => {
     return (
         <div className="select-container">
             {optionsData.map((select, index) => (
