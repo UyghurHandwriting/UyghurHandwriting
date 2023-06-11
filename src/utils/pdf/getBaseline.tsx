@@ -30,7 +30,5 @@ export function getBaseline({
 
   path += verticalBorder;
 
-  console.log(verticalBorder);
-
   return path;
 }
