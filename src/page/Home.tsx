@@ -1,14 +1,14 @@
 import React from "react";
-import { PrimaryNav } from "../component/Nav/PrimaryNav";
-import { PrimaryNavItem } from "../component/Nav/PrimaryNavItem";
-import { Header } from "../component/Header/Header";
-
+import { PdfGenerator } from "../component/pdf/PdfGenerator";
+import { useDispatch, useSelector } from "react-redux";
+import { selectPdfSlice, setPdfFontSize } from "../features/pdf/pdfSlice";
 type Props = {};
 
 export function Home({}: Props) {
+  const pdfSlice = useSelector(selectPdfSlice) ?? {};
   return (
     <div>
-      <Header />
+      <PdfGenerator pdfSlice={pdfSlice} />
     </div>
   );
 }
