@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 
 function PdfHeader() {
   return (
-    <View style={styles.header}>
+    <View fixed={true} style={styles.header}>
       <Text>Header Content</Text>
     </View>
   );
