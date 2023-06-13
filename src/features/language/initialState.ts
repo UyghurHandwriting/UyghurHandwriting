@@ -1,10 +1,5 @@
-export type Languages = {
-  english: string;
-  turkish: string;
-  uyghur: string;
-  uyghurLatin: string;
-  chinese: string;
-};
+import { Languages } from "../../app/types";
+
 export type Language = {
   home: {
     header: {

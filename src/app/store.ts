@@ -27,7 +27,7 @@ import {
 } from "redux-persist";
 
 //----root reducer
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   [languageSliceKey]: languageReducer,
   [pdfSliceKey]: pdfReducer,
 });

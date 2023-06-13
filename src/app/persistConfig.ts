@@ -9,5 +9,5 @@ export const persistConfig: PersistConfig<RootState> = {
   key: "root",
   storage: storage,
   stateReconciler: autoMergeLevel2,
-  whitelist: [languageSliceKey, pdfSliceKey],
+  whitelist: [languageSliceKey],
 };
