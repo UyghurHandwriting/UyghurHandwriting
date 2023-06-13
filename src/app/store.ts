@@ -12,6 +12,9 @@ import {
   sliceKey as languageSliceKey,
   languageReducer,
 } from "../features/language/languageSlice";
+
+import { sliceKey as pdfSliceKey, pdfReducer } from "../features/pdf/pdfSlice";
+
 import {
   persistStore,
   persistReducer,
@@ -26,6 +29,7 @@ import {
 //----root reducer
 const rootReducer = combineReducers({
   [languageSliceKey]: languageReducer,
+  [pdfSliceKey]: pdfReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
