@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 });
 function PdfFooter() {
   return (
-    <View style={styles.footer}>
+    <View fixed={true} style={styles.footer}>
       <Text>Footer Content</Text>
     </View>
   );
