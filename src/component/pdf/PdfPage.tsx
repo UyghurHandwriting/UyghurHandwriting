@@ -95,6 +95,16 @@ export default PdfPage;
  * svg top: 13.5
  *
  *
+ * * LG:
+ * font size: 55
+ * margin bottom:43
+ * svg top: 13.5
+ *
+ * *
+ * XL:
+ * font size: 55
+ * margin bottom:43
+ * top: -19.5,
  *
  *
  */
