@@ -1,7 +1,7 @@
-import { RowSize } from "../../app/types";
+import { RowSize, RowSizeMap } from "../../app/types";
 
 export const getTextChunkSize = (key: RowSize): number => {
-  const fontTable: { [key in RowSize]: number } = {
+  const fontTable: RowSizeMap<number> = {
     XS: 55,
     SM: 45,
     MD: 34,

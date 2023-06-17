@@ -1,9 +1,9 @@
-import { RowSize } from "../../app/types";
+import { RowSize, RowSizeMap } from "../../app/types";
 
 type Props = RowSize;
 
 export const getLineHeight = (prop: Props): number => {
-  const heightMap: { [key in RowSize]: number } = {
+  const heightMap: RowSizeMap<number> = {
     XS: 8.5,
     SM: 10.5,
     MD: 14,

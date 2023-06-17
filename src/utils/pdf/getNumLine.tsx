@@ -1,9 +1,7 @@
-import { Languages } from "../../features/language/initialState";
+import { LangMap, LanguageKeys } from "../../app/types";
 
-type Props = keyof Languages;
-
-export const getNumLine = (props: Props) => {
-  const numLineMap: { [key in Props]: number } = {
+export const getNumLine = (props: LanguageKeys) => {
+  const numLineMap: LangMap<number> = {
     uyghur: 5,
     chinese: 4,
     english: 4,

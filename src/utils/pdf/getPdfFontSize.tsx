@@ -1,7 +1,7 @@
-import { RowSize } from "../../app/types";
+import { RowSize, RowSizeMap } from "../../app/types";
 
 export const getPdfFontSize = (key: RowSize): number => {
-  const fontTable: { [key in RowSize]: number } = {
+  const fontTable: RowSizeMap<number> = {
     XS: 26,
     SM: 31.5,
     MD: 42,
