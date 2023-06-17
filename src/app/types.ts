@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { ConnectedComponent } from "react-redux";
 
 export type InjectComp =
@@ -16,3 +17,4 @@ export type Languages = {
 };
 
 export type LanguageKeys = keyof Languages;
+export type PropsWithChildren<P> = P & { children?: ReactNode };

@@ -1,10 +1,36 @@
 //------------------------------------//
 //   #BREAKPOINTS
 //------------------------------------//
-
-$bp-sm: 23.4375rem; // 375px // mobile
-$bp-sm-2: 35rem; // 560px // mobile
+//assuming that 1rem is 16px
+$bp-xs: 23.4375rem; // 375px // mobile
+$bp-sm: 35rem; // 560px // mobile
 $bp-md: 48rem; // 768px // tablet
 $bp-lg: 60rem; // 960px //
 $bp-xl: 75rem; // 1200px // desktop
 $bp-xxl: 87.5rem; // 1600px // desktop
+
+$breakpoints: (
+  xs: $bp-xs,
+  sm: $bp-sm,
+  md: $bp-md,
+  lg: $bp-lg,
+  xl: $bp-xl,
+  xxl: $bp-xxl,
+);
+
+//------------------------------------//
+//   #BREAKPOINT function
+// for this app we are using desktop first approach
+// since this app is intended to be used on PC
+//------------------------------------//
+@mixin media($name) {
+  $query: map-get($breakpoints, $name);
+
+  @if $query != null {
+    @media (max-width: $query) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$name}. Please choose from: #{map-keys($breakpoints)}.";
+  }
+}
