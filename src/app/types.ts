@@ -18,3 +18,5 @@ export type Languages = {
 
 export type LanguageKeys = keyof Languages;
 export type PropsWithChildren<P> = P & { children?: ReactNode };
+export type LangMap<T> = { [key in LanguageKeys]: T };
+export type DirectionStyle = "rtl" | "ltr";

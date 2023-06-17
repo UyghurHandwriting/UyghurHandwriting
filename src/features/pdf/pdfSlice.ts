@@ -22,10 +22,16 @@ export const sliceKey = "pdf";
 export const pdfSlice = createSlice({
   name: sliceKey,
   initialState,
-  reducers: {},
+  reducers: {
+    setPdfText: (state, action: PayloadAction<string>) => {
+      state.text = action.payload;
+    },
+  },
 });
 
 //export reducers & selector
-export const {} = pdfSlice.actions;
+export const { setPdfText } = pdfSlice.actions;
 export const pdfReducer = pdfSlice.reducer;
 export const selectPdfSlice = (state: RootState) => state[sliceKey];
+export const selectPdfLanguage = (state: RootState) => state[sliceKey].language;
+export const selectPdfText = (state: RootState) => state[sliceKey].text;
