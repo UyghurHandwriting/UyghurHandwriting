@@ -1,15 +1,18 @@
 import React from "react";
 import { PDFViewer } from "@react-pdf/renderer";
 import PdfPage from "./PdfPage";
+import "./PdfGenerator.scss";
 
-type Props = { width?: string; height?: string };
+type Props = {};
 
-export const PdfGenerator = ({ width = "500", height = "600" }: Props) => {
+export const PdfGenerator = ({}: Props) => {
   return (
-    <>
-      <PDFViewer width={width} height={height}>
-        <PdfPage />
-      </PDFViewer>
-    </>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="pdfContainer">
+        <PDFViewer width="100%" height="100%">
+          <PdfPage />
+        </PDFViewer>
+      </div>
+    </div>
   );
 };
