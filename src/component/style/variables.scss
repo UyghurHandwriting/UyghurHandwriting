@@ -1,0 +1,70 @@
+$size-base-unit: 0.5rem;
+$color-primary-green: #30c87f;
+$color-primary-red: #e66469;
+$color-primary-gray-dark: #a0a3a2;
+$color-primary-gray-mid: #f2f3f3;
+$color-primary-gray-light: #faf9f9;
+$color-primary-black: #000000;
+
+/* For use in _color-definitions.scss */
+$palette-green: rgb(230, 248, 240) rgb(193, 239, 217) rgb(152, 228, 191)
+  rgb(110, 217, 165) rgb(79, 208, 146) rgb(48, 200, 127) rgb(43, 194, 119)
+  rgb(36, 187, 108) rgb(30, 180, 98) rgb(19, 167, 79) rgb(217, 255, 231)
+  rgb(166, 255, 199) rgb(115, 255, 166) rgb(89, 255, 150);
+
+$palette-green-50: nth($palette-green, 1);
+$palette-green-100: nth($palette-green, 2);
+$palette-green-200: nth($palette-green, 3);
+$palette-green-300: nth($palette-green, 4);
+$palette-green-400: nth($palette-green, 5);
+$palette-green-500: nth($palette-green, 6);
+$palette-green-600: nth($palette-green, 7);
+$palette-green-700: nth($palette-green, 8);
+$palette-green-800: nth($palette-green, 9);
+$palette-green-900: nth($palette-green, 10);
+$palette-green-A100: nth($palette-green, 11);
+$palette-green-A200: nth($palette-green, 12);
+$palette-green-A400: nth($palette-green, 13);
+$palette-green-A700: nth($palette-green, 14);
+
+/* For use in _color-definitions.scss */
+$palette-red: rgb(252, 236, 237) rgb(248, 209, 210) rgb(243, 178, 180)
+  rgb(238, 147, 150) rgb(234, 123, 128) rgb(230, 100, 105) rgb(227, 92, 97)
+  rgb(223, 82, 86) rgb(219, 72, 76) rgb(213, 54, 59) rgb(255, 255, 255)
+  rgb(255, 235, 235) rgb(255, 184, 185) rgb(255, 158, 160);
+
+$palette-red-50: nth($palette-red, 1);
+$palette-red-100: nth($palette-red, 2);
+$palette-red-200: nth($palette-red, 3);
+$palette-red-300: nth($palette-red, 4);
+$palette-red-400: nth($palette-red, 5);
+$palette-red-500: nth($palette-red, 6);
+$palette-red-600: nth($palette-red, 7);
+$palette-red-700: nth($palette-red, 8);
+$palette-red-800: nth($palette-red, 9);
+$palette-red-900: nth($palette-red, 10);
+$palette-red-A100: nth($palette-red, 11);
+$palette-red-A200: nth($palette-red, 12);
+$palette-red-A400: nth($palette-red, 13);
+$palette-red-A700: nth($palette-red, 14);
+
+/* For use in _color-definitions.scss */
+$palette-gray: rgb(244, 244, 244) rgb(227, 227, 227) rgb(208, 209, 209)
+  rgb(189, 191, 190) rgb(174, 177, 176) rgb(160, 163, 162) rgb(152, 155, 154)
+  rgb(142, 145, 144) rgb(132, 136, 134) rgb(115, 119, 117) rgb(250, 255, 252)
+  rgb(204, 250, 227) rgb(148, 255, 201) rgb(122, 255, 189);
+
+$palette-gray-50: nth($palette-gray, 1);
+$palette-gray-100: nth($palette-gray, 2);
+$palette-gray-200: nth($palette-gray, 3);
+$palette-gray-300: nth($palette-gray, 4);
+$palette-gray-400: nth($palette-gray, 5);
+$palette-gray-500: nth($palette-gray, 6);
+$palette-gray-600: nth($palette-gray, 7);
+$palette-gray-700: nth($palette-gray, 8);
+$palette-gray-800: nth($palette-gray, 9);
+$palette-gray-900: nth($palette-gray, 10);
+$palette-gray-A100: nth($palette-gray, 11);
+$palette-gray-A200: nth($palette-gray, 12);
+$palette-gray-A400: nth($palette-gray, 13);
+$palette-gray-A700: nth($palette-gray, 14);

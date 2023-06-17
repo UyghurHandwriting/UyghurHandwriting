@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: "./src/Index.tsx", // Path the entry file of the application
@@ -14,12 +13,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       // Dynamically create the html file for you on build
-      title: "Pet Parent Lookup Tool", // What gets placed in the title element in the HTML file
+      title: "Uyghur Hand Writing", // What gets placed in the title element in the HTML file
       minify: true, // Minify js if webpack mode is production
       hash: true, // append a unique webpack compilation hash to all included scripts and CSS files. - useful for cache busting
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [{ from: path.join("env.js"), to: "env.js" }],
     }),
@@ -41,10 +39,6 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
         test: /\.svg$/,
         use: [
           {
@@ -52,6 +46,14 @@ module.exports = {
             options: {
               limit: 10000,
             },
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
           },
         ],
       },
