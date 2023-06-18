@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  entry: "./src/Index.tsx", // Path the entry file of the application
   entry: {
     index: "./src/Index.tsx",
     reactPdf: "./node_modules/@react-pdf/renderer",
