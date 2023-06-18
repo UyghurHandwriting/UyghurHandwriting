@@ -3,6 +3,8 @@ import { RootState } from "../../app/store";
 import { LanguageKeys, RowSize } from "../../app/types";
 
 export type PdfInitialState = {
+  showToolbar: boolean;
+  forceRefresh: boolean;
   language: LanguageKeys;
   baseLineSize: RowSize;
   baseLineColor: string;
@@ -11,6 +13,8 @@ export type PdfInitialState = {
 };
 
 export const initialState: PdfInitialState = {
+  showToolbar: false,
+  forceRefresh: false,
   language: "uyghur",
   baseLineSize: "XL",
   baseLineColor: "rgba(103,102,102,255)",
@@ -26,12 +30,19 @@ export const pdfSlice = createSlice({
     setPdfText: (state, action: PayloadAction<string>) => {
       state.text = action.payload;
     },
+    setPdfRefresh: (state) => {
+      state.forceRefresh = !state.forceRefresh;
+    },
   },
 });
 
 //export reducers & selector
-export const { setPdfText } = pdfSlice.actions;
+export const { setPdfText, setPdfRefresh } = pdfSlice.actions;
 export const pdfReducer = pdfSlice.reducer;
 export const selectPdfSlice = (state: RootState) => state[sliceKey];
 export const selectPdfLanguage = (state: RootState) => state[sliceKey].language;
+export const selectPdfShowToolBar = (state: RootState) =>
+  state[sliceKey].showToolbar;
 export const selectPdfText = (state: RootState) => state[sliceKey].text;
+export const selectPdfRefresh = (state: RootState) =>
+  state[sliceKey].forceRefresh;
