@@ -1,7 +1,7 @@
-import { RowSize } from "../../app/types";
+import { RowSize, RowSizeMap } from "../../app/types";
 
 export const getStyleLineTop = (key: RowSize): number => {
-  const fontTable: { [key in RowSize]: number } = {
+  const fontTable: RowSizeMap<number> = {
     XS: -6,
     SM: -7,
     MD: -9.5,
