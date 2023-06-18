@@ -1,5 +1,5 @@
 import React from 'react';
-import "./SelectComponent.scss"
+import "./Dropdown.scss"
 
 export interface SelectOption {
     value: string;
@@ -30,7 +30,7 @@ const optionsData: SelectData[] = [
     }
 ];
 
-const  SelectComponent: React.FC = () => {
+const  Dropdown: React.FC = () => {
     return (
         <div className="select-container">
             {optionsData.map((select, index) => (
@@ -49,4 +49,4 @@ const  SelectComponent: React.FC = () => {
     );
 };
 
-export default SelectComponent;
+export default Dropdown;

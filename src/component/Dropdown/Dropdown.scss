@@ -3,12 +3,7 @@
 .select-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    border-radius: 4px;
-    border: 1px solid  $color-primary-black;
-    padding: 10px;
-  
     .select-wrapper {
       display: flex;
       align-items: center;
