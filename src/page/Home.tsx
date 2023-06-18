@@ -16,6 +16,8 @@ export function Home({}: Props) {
             doloribus eius, accusamus doloremque?{" "}
           </div>
         </>
+        {/* <LayoutBox propComponent={<SelectComponent />} title="LayoutBox" /> */}
+
       </VerticalTwoColumn>
     </div>
   );
