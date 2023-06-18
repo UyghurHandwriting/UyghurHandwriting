@@ -1,0 +1,25 @@
+@import "../../style/breakpoints.scss";
+
+.twoColumn {
+  display: flex;
+  flex-direction: row;
+  > * {
+    flex-basis: 50%;
+  }
+
+  @include media(md) {
+    > * {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.reverse {
+  flex-direction: column-reverse;
+}
+
+.mobileReverse {
+  @include media(md) {
+    flex-direction: column-reverse;
+  }
+}

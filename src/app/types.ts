@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { ConnectedComponent } from "react-redux";
 
 export type InjectComp =
@@ -6,3 +7,14 @@ export type InjectComp =
 
 export type RowSize = "XS" | "SM" | "MD" | "LG" | "XL";
 export type SVGMaxHeight = 765;
+
+export type Languages = {
+  english: string;
+  turkish: string;
+  uyghur: string;
+  uyghurLatin: string;
+  chinese: string;
+};
+
+export type LanguageKeys = keyof Languages;
+export type PropsWithChildren<P> = P & { children?: ReactNode };

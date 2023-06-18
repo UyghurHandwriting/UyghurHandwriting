@@ -1,13 +1,12 @@
-import { RowSize } from "../../app/types";
-import { Languages } from "../../features/language/initialState";
+import { LanguageKeys, RowSize } from "../../app/types";
 import { getBaseline } from "./getBaseline";
-import { getLineHeight } from "./getLineheight";
+import { getLineHeight } from "./getLineHeight";
 import { getNumLine } from "./getNumLine";
 
 type Props = {
   numRow: number;
   size: RowSize;
-  language: keyof Languages;
+  language: LanguageKeys;
   length?: number;
 };
 
@@ -25,7 +24,6 @@ export default function getLineGroup({
   for (let i = 0; i < numRow; i++) {
     pathGroup += getBaseline({ height, length, startX, startY, numLine });
     startY += height * numLine + height;
-    console.log("the height: ", startY);
   }
 
   return pathGroup;

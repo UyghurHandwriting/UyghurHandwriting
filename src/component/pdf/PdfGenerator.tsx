@@ -1,20 +1,18 @@
 import React from "react";
 import { PDFViewer } from "@react-pdf/renderer";
 import PdfPage from "./PdfPage";
-import { PdfInitialState } from "../../features/pdf/pdfSlice";
+import "./PdfGenerator.scss";
 
-type Props = { width?: string; height?: string; pdfSlice: PdfInitialState };
+type Props = {};
 
-export const PdfGenerator = ({
-  width = "500",
-  height = "600",
-  pdfSlice,
-}: Props) => {
+export const PdfGenerator = ({}: Props) => {
   return (
-    <>
-      <PDFViewer width={width} height={height}>
-        <PdfPage pdfSlice={pdfSlice} />
-      </PDFViewer>
-    </>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="pdfContainer">
+        <PDFViewer width="100%" height="100%">
+          <PdfPage />
+        </PDFViewer>
+      </div>
+    </div>
   );
 };

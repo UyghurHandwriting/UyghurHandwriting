@@ -1,17 +1,6 @@
 import React from "react";
-import {
-  Page,
-  View,
-  Document,
-  StyleSheet,
-  Font,
-  Svg,
-  Path,
-} from "@react-pdf/renderer";
-import { PdfInitialState } from "../../features/pdf/pdfSlice";
-
+import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
 import uyghur1 from "../../app/font/uyghur/ukijelipbe.ttf";
-import getLineGroup from "../../utils/pdf/getLineGroup";
 import PdfHeader from "./PdfHeader";
 import { PdfText } from "./PdfText";
 import PdfFooter from "./PdfFooter";
@@ -32,70 +21,18 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     flexGrow: 1,
   },
-
-  text: {
-    textAlign: "right",
-    direction: "rtl",
-    fontFamily: "Uyghur1",
-    marginBottom: 16.5,
-  },
-  line: { borderTop: "1px dashed red", width: "700" },
-  lineContainer: {},
-  dashedLine: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-  },
 });
 
-type Props = {
-  pdfSlice: PdfInitialState;
-};
+type Props = {};
 
-
-
-
-
-
-
-function PdfPage({ pdfSlice }: Props) {
-  const text: string =
-    " خ ئۈمىد قىلىدۇ. لېكىن تۈركىيە ھۆكۈمىتى ئىلگىرى رەھبەرلىك باسقۇچىدا بۇنداق قەدەم تاشلىمىدى.ختى ئىلگىرى رەھبەرلىك باسق";
-
-  /**
-   * TODO: we should build a helper function that:
-   * 1. splits these lines in best ways possible
-   * 2. consider spaces
-   * 3. consider words
-   * 4. consider length
-   */
-
-    const splitText = (text: string, chunkSize: number): string[] => {
-      const regex = new RegExp(`.{1,${chunkSize}}`, "g");
-      return text.match(regex) || [];
-    };
-
- 
-
+function PdfPage({}: Props) {
   return (
     <Document>
       <Page size="LETTER" style={styles.page}>
         <PdfHeader />
         <View style={styles.main}>
-          <View style={{}}>
-            <Svg debug={false} style={{ position: "absolute", top: 13.5 }}>
-              <Path
-                d={getLineGroup({ language: "uyghur", numRow: 6, size: "LG" })}
-                strokeWidth={0.4}
-                stroke={"rgba(103,102,102,255)"}
-              />
-            </Svg>
-            <View style={{}}>
-              <PdfText text={splitText(text, 25)} />
-            </View>
-          </View>
+          <PdfText />
         </View>
-
         <PdfFooter />
       </Page>
     </Document>
@@ -162,6 +99,16 @@ export default PdfPage;
  * svg top: 13.5
  *
  *
+ * * LG:
+ * font size: 55
+ * margin bottom:43
+ * svg top: 13.5
+ *
+ * *
+ * XL:
+ * font size: 55
+ * margin bottom:43
+ * top: -19.5,
  *
  *
  */
