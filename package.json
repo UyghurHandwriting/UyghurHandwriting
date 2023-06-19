@@ -6,7 +6,7 @@
   "author": "UyghurHandwriting",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js --mode=production",
     "tscheck": "tsc",
     "test": "jest --config jest.config.js"
   },

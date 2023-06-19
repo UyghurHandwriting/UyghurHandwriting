@@ -2,14 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  entry: {
-    index: "./src/Index.tsx",
-    reactPdf: "./node_modules/@react-pdf/renderer",
-  },
+  entry: "./src/Index.tsx", // Path the entry file of the application
   output: {
     path: path.resolve(__dirname, "./dist"), // Path to to were all files will be placed during a build
-    filename: "[name].js", // file name of the bundled js file
-    chunkFilename: "[name].bundle.js",
+    filename: "bundle.js", // file name of the bundled js file
     clean: true, // clean/remove all files in dist before each build
     publicPath: "/",
   },
@@ -27,7 +23,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 3003,
+    port: 3000,
     historyApiFallback: true,
     static: {
       directory: path.resolve(__dirname, "./dist"), // Content not from webpack will come from this path
@@ -65,10 +61,5 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js"], // resolve extensions so they are not required in an import path
-  },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
   },
 };
