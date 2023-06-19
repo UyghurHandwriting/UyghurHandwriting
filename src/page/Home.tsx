@@ -4,6 +4,7 @@ import { VerticalTwoColumn } from "../component/layout/VerticalTwoColumn/Vertica
 import { TextAreaMain } from "../component/TextArea";
 import { useDispatch, useSelector } from "react-redux";
 import { selectPdfRefresh, setPdfRefresh } from "../features/pdf/pdfSlice";
+import { Header } from "../component/layout/Header/Header";
 type Props = {};
 
 export function Home({}: Props) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
-import { PrimaryNav } from "../Nav/PrimaryNav";
-import { PrimaryNavItem } from "../Nav/PrimaryNavItem";
+import { PrimaryNav } from "../../Nav/PrimaryNav";
+import { PrimaryNavItem } from "../../Nav/PrimaryNavItem";
 
 type Props = {};
 export const Header = () => {
