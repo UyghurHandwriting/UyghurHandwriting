@@ -1,6 +1,6 @@
 import { LanguageKeys, RowSize } from "../../app/types";
 import { getBaseline } from "./getBaseline";
-import { getLineHeight } from "./getLineHeight";
+import { getLineHeight } from "./getLineheight";
 import { getNumLine } from "./getNumLine";
 
 type Props = {
