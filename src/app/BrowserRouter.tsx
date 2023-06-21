@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../page/Home";
+import { About } from "../page/About";
 
 export const browserRouter = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ export const browserRouter = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <p>About</p>,
+    element: <About />,
   },
   {
     path: "/support",
