@@ -21,3 +21,8 @@ export type PropsWithChildren<P> = P & { children?: ReactNode };
 export type LangMap<T> = { [key in LanguageKeys]: T };
 export type RowSizeMap<T> = { [key in RowSize]: T };
 export type DirectionStyle = "rtl" | "ltr";
+
+export interface DropdownOption<TValue = string, TLabel = string> {
+  value: TValue; //value is the option id. must be unique
+  label: TLabel; //label is the UI display string
+}

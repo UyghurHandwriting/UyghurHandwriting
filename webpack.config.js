@@ -39,12 +39,14 @@ module.exports = {
         },
       },
       {
-        test: /\.svg$/,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: "svg-url-loader",
+            loader: "url-loader",
             options: {
-              limit: 10000,
+              limit: 8192, // Configure the maximum size (in bytes) for inlining images as data URLs
+              fallback: "file-loader", // Use file-loader as a fallback for larger files
+              name: "images/[name].[hash:8].[ext]", // Specify the output directory and filename pattern
             },
           },
         ],
