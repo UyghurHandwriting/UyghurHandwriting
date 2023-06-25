@@ -1,14 +1,68 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { initialLangState } from "./initialState";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { InitialLangState, initialLangState } from "./initialState";
+import { LanguageKeys } from "../../app/types";
+import { RootState } from "../../app/store";
 
-export const initialState = initialLangState;
+type InitialState = InitialLangState & {
+  language: LanguageKeys;
+  langOptionOpen: boolean; //indicates in the language dropdown is open
+};
+
+export const initialState: InitialState = {
+  ...initialLangState,
+  language: "english",
+  langOptionOpen: false,
+};
 export const sliceKey = "language";
 export const languageSlice = createSlice({
   name: sliceKey,
   initialState,
-  reducers: {},
+  reducers: {
+    setSiteLanguage: (state, action: PayloadAction<LanguageKeys>) => {
+      state.language = action.payload;
+    },
+    setLangOptionOpen: (state, action: PayloadAction<boolean | undefined>) => {
+      if (action?.payload) {
+        state.langOptionOpen = action.payload;
+      } else {
+        state.langOptionOpen = !state.langOptionOpen;
+      }
+    },
+  },
 });
 
 //export reducers & selector
-export const {} = languageSlice.actions;
+export const { setSiteLanguage, setLangOptionOpen } = languageSlice.actions;
 export const languageReducer = languageSlice.reducer;
+
+export const thisSlice = (state: RootState) => state[sliceKey];
+
+export const selectSiteLanguage = (state: RootState) =>
+  thisSlice(state).language;
+
+export const selectLangText =
+  (state: RootState) =>
+  (textKey: keyof InitialLangState): string => {
+    return thisSlice(state)[textKey][thisSlice(state).language];
+  };
+
+export const selectLangOptionOpen = (state: RootState) =>
+  thisSlice(state).langOptionOpen;
+
+export const selectHeaderNav1 = (state: RootState) =>
+  selectLangText(state)("headerNav1");
+
+export const selectHeaderNav2 = (state: RootState) =>
+  selectLangText(state)("headerNav2");
+
+export const selectRNav5 = (state: RootState) => selectLangText(state)("rNav5");
+
+export const selectRNav6 = (state: RootState) => selectLangText(state)("rNav6");
+
+export const selectRNav7 = (state: RootState) => selectLangText(state)("rNav7");
+
+export const selectRCardTitle9 = (state: RootState) =>
+  selectLangText(state)("rCardTitle9");
+
+export const selectRCardTitle16 = (state: RootState) =>
+  selectLangText(state)("rCardTitle16");
