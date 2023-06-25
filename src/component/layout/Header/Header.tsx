@@ -3,10 +3,20 @@ import "./Header.scss";
 import { PrimaryNav } from "../../Nav/PrimaryNav";
 import { PrimaryNavItem } from "../../Nav/PrimaryNavItem";
 
+import { LangImgDropdown } from "../../ImageDropdown/ImageDropdown";
+import { useSelector } from "react-redux";
+import {
+  selectHeaderNav1,
+  selectHeaderNav2,
+} from "../../../features/language/languageSlice";
+
 type Props = {};
 export const Header = () => {
   const [isHeaderFolded, setIsHeaderFolded] = useState(false);
-
+  const homeText = useSelector(selectHeaderNav1);
+  const aboutText = useSelector(selectHeaderNav2);
+  console.log(aboutText, homeText);
+  //---header scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsHeaderFolded(window.scrollY > 0);
@@ -17,16 +27,27 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <header className={`header ${isHeaderFolded ? "folded" : ""}`}>
-      <PrimaryNav>
-        <PrimaryNavItem textStyle={{ color: "white" }} text="Home" href="/" />
-        <PrimaryNavItem
-          textStyle={{ color: "white" }}
-          text="About"
-          href="/about"
-        />
-      </PrimaryNav>
+      <div className="sideCol"></div>
+      <div className="middleCol">
+        <PrimaryNav>
+          <PrimaryNavItem
+            textStyle={{ color: "white" }}
+            text={homeText}
+            href="/"
+          />
+          <PrimaryNavItem
+            textStyle={{ color: "white" }}
+            text={aboutText}
+            href="/about"
+          />
+        </PrimaryNav>
+      </div>
+      <div className="sideCol">
+        <LangImgDropdown />
+      </div>
     </header>
   );
 };
