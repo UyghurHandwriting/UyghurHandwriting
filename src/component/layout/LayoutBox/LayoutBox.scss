@@ -1,12 +1,8 @@
+@import "../../style/functions.scss";
 
-@import "../style/variables.scss";
 .box-layout {
-  border       : 2px solid  $color-primary-black;
-  border-radius: 10px;
-  padding      : 10px;
+  border       : 2px solid  black;
+  border-radius: size(0.7);;
+  padding      : size(0.7);;
   width        : 100%;
-
-  span {
-    padding: 5px;
-  }
 }
