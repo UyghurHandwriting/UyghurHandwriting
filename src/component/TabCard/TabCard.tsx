@@ -48,6 +48,7 @@ const TabCard = ({ tabCards, componentId }: Props) => {
           ))}
         </PrimaryNav>
       </div>
+      <hr />
       <div className="TabCard--tab-content">
         <Content />
       </div>

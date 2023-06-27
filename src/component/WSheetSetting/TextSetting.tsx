@@ -4,6 +4,7 @@ import "./TextSetting.scss";
 import { useSelector } from "react-redux";
 import { selectRCardTitle9 } from "../../features/language/languageSlice";
 import { FontStyleOption } from "../Dropdown/Dropdown";
+import { DownloadPdf } from "../pdf/DownloadPdf";
 type Props = {};
 
 export const TextSetting = (props: Props) => {
@@ -14,6 +15,7 @@ export const TextSetting = (props: Props) => {
       <div className="">
         <p className="text-md">{baselineText} </p>
         <FontStyleOption />
+        <DownloadPdf />
       </div>
     </>
   );

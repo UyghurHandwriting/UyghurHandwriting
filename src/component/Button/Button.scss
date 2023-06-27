@@ -1,0 +1,21 @@
+@import "../style/variables.scss";
+
+.Button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Button.ButtonDisabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.ButtonPrimary {
+  background-color: #30c87f;
+}

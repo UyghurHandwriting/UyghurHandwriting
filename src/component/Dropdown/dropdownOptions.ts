@@ -1,4 +1,4 @@
-import { DropdownOption, LanguageKeys } from "../../app/types";
+import { DropdownOption, FontStyle, LanguageKeys } from "../../app/types";
 
 export const langueOptions: DropdownOption<LanguageKeys>[] = [
   {
@@ -18,17 +18,17 @@ export const langueOptions: DropdownOption<LanguageKeys>[] = [
     label: "Chinese",
   },
 ];
-export const fontStyleOption_uyghur: DropdownOption[] = [
+export const fontStyleOption_uyghur: DropdownOption<FontStyle>[] = [
   {
-    value: "UKIJElipbe",
+    value: FontStyle.UKIJElipbe,
     label: "UKIJ Elipbe",
   },
   {
-    value: "UKIJElipbeChekitlik",
+    value: FontStyle.UKIJElipbeChekitlik,
     label: "Elipbe chekitlik",
   },
   {
-    value: "AlpEkran",
+    value: FontStyle.AlpEkran,
     label: "Alp ekran",
   },
 ];
