@@ -26,3 +26,11 @@ export interface DropdownOption<TValue = string, TLabel = string> {
   value: TValue; //value is the option id. must be unique
   label: TLabel; //label is the UI display string
 }
+
+export enum FontStyle {
+  UKIJElipbe,
+  UKIJElipbeChekitlik,
+  AlpEkran,
+}
+
+export type FontStyleKeys = keyof typeof FontStyle;
