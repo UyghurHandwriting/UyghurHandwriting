@@ -14,6 +14,7 @@ export const TextSetting = (props: Props) => {
       <div className="">
         <p className="text-md">{baselineText} </p>
         <FontStyleOption />
+        <DownloadPdf />
       </div>
     </>
   );

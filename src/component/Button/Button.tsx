@@ -41,3 +41,12 @@ export const Button = ({
   );
 };
 
+export const DownloadPdfBtn = connect(
+  (state: RootState, ownProps: { children: React.ReactNode }): Props => {
+    return {
+      componentId: "DownloadPdfBtn",
+      children: ownProps.children,
+      variant: ["Primary"],
+    };
+  }
+)(Button);
