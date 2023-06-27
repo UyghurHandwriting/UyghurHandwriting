@@ -1,5 +1,10 @@
 import { connect } from "react-redux";
-import { DropdownOption, LanguageKeys } from "../../app/types";
+import {
+  DropdownOption,
+  FontStyle,
+  FontStyleKeys,
+  LanguageKeys,
+} from "../../app/types";
 import React from "react";
 import { RootState } from "../../app/store";
 import { fontStyleOption_uyghur, langueOptions } from "./dropdownOptions";
@@ -11,6 +16,7 @@ import {
   setSiteLanguage,
 } from "../../features/language/languageSlice";
 import classnames from "classnames";
+import { setPdfFontStyle, setPdfRefresh } from "../../features/pdf/pdfSlice";
 
 type HandleClick = (value: any) => void;
 type DropdownClassName = {
@@ -20,7 +26,7 @@ type DropdownClassName = {
   option?: string;
 };
 interface ComponentProps {
-  options: DropdownOption[];
+  options: DropdownOption<any>[];
   className?: DropdownClassName;
   componentId: string;
   label?: string;
@@ -129,9 +135,9 @@ export const FontStyleOption = connect(
   //-----mapDispatch
   (dispatch: Dispatch<any>) => {
     return {
-      handleClick: (value: LanguageKeys) => {
-        // dispatch(setSiteLanguage(value));
-        // dispatch(setLangOptionOpen());
+      handleClick: (value: FontStyle) => {
+        dispatch(setPdfFontStyle(value));
+        dispatch(setPdfRefresh());
       },
     };
   }

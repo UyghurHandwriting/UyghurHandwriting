@@ -66,3 +66,6 @@ export const selectRCardTitle9 = (state: RootState) =>
 
 export const selectRCardTitle16 = (state: RootState) =>
   selectLangText(state)("rCardTitle16");
+
+export const selectRBtn14 = (state: RootState) =>
+  selectLangText(state)("rBtn14");

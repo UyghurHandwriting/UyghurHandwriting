@@ -13,19 +13,22 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "right",
     direction: "rtl",
-    fontFamily: "Uyghur1",
     position: "relative",
   },
 });
 
 export const PdfText = ({}: Props) => {
-  const { baseLineSize, text: pdfText } = useMemo(() => getPdfSlice(), []);
+  const {
+    baseLineSize,
+    text: pdfText,
+    languageStyle,
+  } = useMemo(() => getPdfSlice(), []);
   const fontSize = getPdfFontSize(baseLineSize);
   const top = getStyleLineTop(baseLineSize);
   const rowGap = getRowGap(baseLineSize);
   const chunkSize = getTextChunkSize(baseLineSize);
   const text = splitText({ text: pdfText, chunkSize });
-
+  const fontFamily = languageStyle.label;
   return (
     <>
       {text.map((str, index) => {
@@ -35,7 +38,16 @@ export const PdfText = ({}: Props) => {
             style={{ marginBottom: rowGap }}
           >
             <PdfBaseLine />
-            <Text style={{ ...styles.text, fontSize, top }}>{str}</Text>
+            <Text
+              style={{
+                ...styles.text,
+                fontSize,
+                top,
+                fontFamily,
+              }}
+            >
+              {str}
+            </Text>
           </View>
         );
       })}
