@@ -1,10 +1,10 @@
 import React from "react";
 import { PdfGenerator } from "../component/pdf/PdfGenerator";
 import { VerticalTwoColumn } from "../component/layout/VerticalTwoColumn/VerticalTwoColumn";
-import { TextAreaMain } from "../component/TextArea";
-import { useDispatch, useSelector } from "react-redux";
-import { selectPdfRefresh, setPdfRefresh } from "../features/pdf/pdfSlice";
+import { useDispatch } from "react-redux";
+import { setPdfRefresh } from "../features/pdf/pdfSlice";
 import { Header } from "../component/layout/Header/Header";
+import { WorksheetSettings } from "../component/TabCard/TabCard";
 type Props = {};
 
 export function Home({}: Props) {
@@ -19,7 +19,7 @@ export function Home({}: Props) {
       <VerticalTwoColumn>
         <PdfGenerator />
         <div className="">
-          <TextAreaMain />
+          <WorksheetSettings />
         </div>
       </VerticalTwoColumn>
       <button onClick={handleClick}>Preview PDF</button>
