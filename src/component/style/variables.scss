@@ -1,4 +1,5 @@
-$size-base-unit: 0.5rem;
+@import "./functions.scss";
+
 $color-primary-green: #30c87f;
 $color-primary-red: #e66469;
 $color-primary-gray-dark: #a0a3a2;
@@ -68,3 +69,9 @@ $palette-gray-A100: nth($palette-gray, 11);
 $palette-gray-A200: nth($palette-gray, 12);
 $palette-gray-A400: nth($palette-gray, 13);
 $palette-gray-A700: nth($palette-gray, 14);
+
+$font-size-header-md: size(3);
+$font-size-text-md: 16px;
+$font-size-text-sm: 14px;
+$font-size-text-sm2: 12px;
+$font-size-text-sm3: 10px;

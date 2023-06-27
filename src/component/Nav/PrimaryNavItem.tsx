@@ -28,6 +28,8 @@ export interface PrimaryNavItemProps
   componentId?: string;
 
   textStyle?: React.CSSProperties;
+
+  textClassName?: string;
 }
 
 /**
@@ -46,6 +48,7 @@ export const PrimaryNavItem = React.forwardRef<
       isActive,
       children,
       textStyle,
+      textClassName,
       ...other
     },
     ref
@@ -54,14 +57,19 @@ export const PrimaryNavItem = React.forwardRef<
       "is-active": isActive === true,
     });
 
+    const textElementClassName = classnames(
+      "primary-nav__item-text",
+      textClassName
+    );
+
     return (
       <li id={componentId} className={componentClassName} {...other} ref={ref}>
         <Link
           id={componentId + "-a-tag"}
           className="primary-nav--link__underline"
-          to={href ?? ""}
+          to={href ?? "#"}
         >
-          <span className="primary-nav--text" style={{ ...textStyle }}>
+          <span className={textElementClassName} style={{ ...textStyle }}>
             {text}
           </span>
         </Link>
