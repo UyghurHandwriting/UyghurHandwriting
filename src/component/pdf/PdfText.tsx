@@ -22,6 +22,7 @@ export const PdfText = ({}: Props) => {
     baseLineSize,
     text: pdfText,
     languageStyle,
+    textOpacity,
   } = useMemo(() => getPdfSlice(), []);
   const fontSize = getPdfFontSize(baseLineSize);
   const top = getStyleLineTop(baseLineSize);
@@ -44,6 +45,7 @@ export const PdfText = ({}: Props) => {
                 fontSize,
                 top,
                 fontFamily,
+                opacity: textOpacity,
               }}
             >
               {str}

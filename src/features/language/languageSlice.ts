@@ -72,3 +72,6 @@ export const selectRBtn14 = (state: RootState) =>
 
 export const selectRDropLabel19 = (state: RootState) =>
   selectLangText(state)("rDropLabel19");
+
+export const selectRDropLabel20 = (state: RootState) =>
+  selectLangText(state)("rDropLabel20");

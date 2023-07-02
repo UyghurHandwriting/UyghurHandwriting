@@ -1,4 +1,5 @@
 import {
+  TextOpacityKeys,
   BaselineWidth,
   BaselineWidthKeys,
   DropdownOption,
@@ -62,3 +63,26 @@ export const baselineWidthOptions: DropdownOption<BaselineWidthKeys, string>[] =
       label: "Thickest",
     },
   ];
+
+export const textOpacityOptions: DropdownOption<TextOpacityKeys, string>[] = [
+  {
+    value: "XS",
+    label: "Lightest",
+  },
+  {
+    value: "SM",
+    label: "Light",
+  },
+  {
+    value: "MD",
+    label: "Medium",
+  },
+  {
+    value: "LG",
+    label: "Dark",
+  },
+  {
+    value: "XL",
+    label: "Darkest",
+  },
+];

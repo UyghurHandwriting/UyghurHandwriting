@@ -5,7 +5,9 @@ export type InjectComp =
   | ConnectedComponent<(prop: any) => JSX.Element, any>
   | ((prop?: any) => JSX.Element);
 
-export type RowSize = "XS" | "SM" | "MD" | "LG" | "XL";
+export type Size = "XS" | "SM" | "MD" | "LG" | "XL";
+export type RowSize = Size;
+
 export enum BaselineWidth {
   XS = 0.1,
   SM = 0.4,
@@ -15,6 +17,16 @@ export enum BaselineWidth {
 }
 export type BaselineWidthKeys = keyof typeof BaselineWidth;
 export type BaselineWidthValues = (typeof BaselineWidth)[BaselineWidthKeys];
+
+export enum TextOpacity {
+  XS = 0.1,
+  SM = 0.25,
+  MD = 0.5,
+  LG = 0.75,
+  XL = 1,
+}
+export type TextOpacityKeys = keyof typeof TextOpacity;
+export type TextOpacityValues = (typeof TextOpacity)[TextOpacityKeys];
 
 export type SVGMaxHeight = 765;
 

@@ -1,16 +1,17 @@
 import { connect } from "react-redux";
 import {
+  TextOpacity,
+  TextOpacityKeys,
   BaselineWidth,
   BaselineWidthKeys,
-  BaselineWidthValues,
   DropdownOption,
   FontStyle,
-  FontStyleKeys,
   LanguageKeys,
 } from "../../app/types";
 import React from "react";
 import { RootState } from "../../app/store";
 import {
+  textOpacityOptions,
   baselineWidthOptions,
   fontStyleOption_uyghur,
   langueOptions,
@@ -20,11 +21,13 @@ import "./Dropdown.scss";
 import {
   selectRCardTitle16,
   selectRDropLabel19,
+  selectRDropLabel20,
   setLangOptionOpen,
   setSiteLanguage,
 } from "../../features/language/languageSlice";
 import classnames from "classnames";
 import {
+  setPdfTextOpacity,
   setPdfBaselineWidth,
   setPdfFontStyle,
   setPdfRefresh,
@@ -170,6 +173,28 @@ export const BaselineWidthOption = connect(
     return {
       handleClick: (value: BaselineWidthKeys) => {
         dispatch(setPdfBaselineWidth(BaselineWidth[value]));
+        dispatch(setPdfRefresh());
+      },
+    };
+  }
+)(Dropdown);
+
+//TextOpacity
+export const TextOpacityOption = connect(
+  //-----mapProps
+  (state: RootState, ownProps: {}): ComponentProps => {
+    const labelText = selectRDropLabel20(state);
+    return {
+      options: textOpacityOptions,
+      componentId: "TextOpacityOption",
+      label: labelText,
+    };
+  },
+  //-----mapDispatch
+  (dispatch: Dispatch<any>) => {
+    return {
+      handleClick: (value: TextOpacityKeys) => {
+        dispatch(setPdfTextOpacity(TextOpacity[value]));
         dispatch(setPdfRefresh());
       },
     };
