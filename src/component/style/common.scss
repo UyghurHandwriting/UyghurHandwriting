@@ -25,3 +25,9 @@
   text-decoration: none;
   outline: none;
 }
+
+.label-secondary {
+  margin-right: size(3);
+  font-size: $font-size-text-sm;
+  color: $palette-gray-900;
+}

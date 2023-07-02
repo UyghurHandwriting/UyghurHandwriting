@@ -1,0 +1,4 @@
+@import "../style/variables.scss";
+.TextInputInput::placeholder {
+  font-size: $font-size-text-sm3;
+}
