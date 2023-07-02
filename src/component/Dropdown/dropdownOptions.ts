@@ -86,3 +86,26 @@ export const textOpacityOptions: DropdownOption<TextOpacityKeys, string>[] = [
     label: "Darkest",
   },
 ];
+
+export const baselineSizeOptions: DropdownOption<TextOpacityKeys, string>[] = [
+  {
+    value: "XS",
+    label: "Smallest",
+  },
+  {
+    value: "SM",
+    label: "Small",
+  },
+  {
+    value: "MD",
+    label: "Medium",
+  },
+  {
+    value: "LG",
+    label: "Large",
+  },
+  {
+    value: "XL",
+    label: "Largest",
+  },
+];

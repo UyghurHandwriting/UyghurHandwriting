@@ -22,6 +22,7 @@ export type PdfInitialState = {
   text: string;
   baselineWidth: BaselineWidthValues;
   textOpacity: TextOpacityValues;
+  title: string;
 };
 
 export const initialState: PdfInitialState = {
@@ -34,6 +35,7 @@ export const initialState: PdfInitialState = {
   baseLineGap: 10,
   baselineWidth: 0.4,
   textOpacity: 0.5,
+  title: "",
   text: "  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې",
 };
 
@@ -73,6 +75,12 @@ export const pdfSlice = createSlice({
     setPdfTextOpacity: (state, action: PayloadAction<TextOpacityValues>) => {
       state.textOpacity = action.payload;
     },
+    setPdfBaselineSize: (state, action: PayloadAction<RowSize>) => {
+      state.baseLineSize = action.payload;
+    },
+    setPdfTitle: (state, action: PayloadAction<string>) => {
+      state.title = action.payload;
+    },
   },
 });
 
@@ -85,6 +93,8 @@ export const {
   setPdfFontStyle,
   setPdfBaselineWidth,
   setPdfTextOpacity,
+  setPdfTitle,
+  setPdfBaselineSize,
 } = pdfSlice.actions;
 export const pdfReducer = pdfSlice.reducer;
 export const selectPdfSlice = (state: RootState) => state[sliceKey];
@@ -92,5 +102,6 @@ export const selectPdfLanguage = (state: RootState) => state[sliceKey].language;
 export const selectPdfShowToolBar = (state: RootState) =>
   state[sliceKey].showToolbar;
 export const selectPdfText = (state: RootState) => state[sliceKey].text;
+export const selectPdfTitle = (state: RootState) => state[sliceKey].title;
 export const selectPdfRefresh = (state: RootState) =>
   state[sliceKey].forceRefresh;

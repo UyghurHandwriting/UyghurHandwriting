@@ -7,6 +7,7 @@ import {
   TextOpacityOption,
   BaselineWidthOption,
   FontStyleOption,
+  BaselineSizeOption,
 } from "../Dropdown/Dropdown";
 import { DownloadPdf } from "../pdf/DownloadPdf";
 type Props = {};
@@ -21,6 +22,7 @@ export const TextSetting = (props: Props) => {
         <FontStyleOption />
         <BaselineWidthOption />
         <TextOpacityOption />
+        <BaselineSizeOption />
         <DownloadPdf />
       </div>
     </>
