@@ -4,15 +4,20 @@ import classNames from "classnames";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { DirectionStyle, LanguageKeys } from "../../app/types";
 import {
+  selectPdfFooter,
   selectPdfLanguage,
   selectPdfRefresh,
   selectPdfTitle,
+  setPdfFooter,
   setPdfRefresh,
   setPdfTitle,
 } from "../../features/pdf/pdfSlice";
 import { getPdfTextDirection } from "../../utils/pdf/getPdfTextDirection";
 import { RootState } from "../../app/store";
-import { selectRDropLabel23 } from "../../features/language/languageSlice";
+import {
+  selectRDropLabel23,
+  selectRDropLabel24,
+} from "../../features/language/languageSlice";
 
 type ComponentProps = {
   componentId: string;
@@ -116,6 +121,30 @@ export const PdfTitleInput = connect(
     return {
       onChange: (value: string) => {
         dispatch(setPdfTitle(value));
+      },
+    };
+  }
+)(TextInput);
+
+//PdfFooterInput
+export const PdfFooterInput = connect(
+  //-----mapProps
+  (state: RootState, ownProps: {}): ComponentProps => {
+    const labelText = selectRDropLabel24(state);
+    const value = selectPdfFooter(state);
+
+    return {
+      value: value,
+      componentId: "PdfFooterInput",
+      label: labelText,
+      placeholder: "PDF Footer",
+    };
+  },
+  //-----mapDispatch
+  (dispatch: Dispatch<any>) => {
+    return {
+      onChange: (value: string) => {
+        dispatch(setPdfFooter(value));
       },
     };
   }
