@@ -1,5 +1,4 @@
 import { DropdownOption, FontStyle, FontStyleKeys } from "../../app/types";
-// import { ukijelipbe, elp, ukijelibech } from "../../app/font/index";
 import ukijelipbe from "../../app/font/uyghur/ukijelipbe.ttf";
 import elp from "../../app/font/uyghur/alp.ttf";
 import ukijelibech from "../../app/font/uyghur/ukijelipbech.ttf";

@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import {
+  BaselineWidthValues,
   DropdownOption,
   FontStyle,
   FontStyleKeys,
@@ -18,6 +19,7 @@ export type PdfInitialState = {
   baseLineColor: string;
   baseLineGap: number;
   text: string;
+  baselineWidth: BaselineWidthValues;
 };
 
 export const initialState: PdfInitialState = {
@@ -28,6 +30,7 @@ export const initialState: PdfInitialState = {
   baseLineSize: "XL",
   baseLineColor: "rgba(103,102,102,255)",
   baseLineGap: 10,
+  baselineWidth: 0.4,
   text: "  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې",
 };
 
@@ -58,6 +61,12 @@ export const pdfSlice = createSlice({
       state.languageStyle.value = action.payload;
       state.languageStyle.label = label;
     },
+    setPdfBaselineWidth: (
+      state,
+      action: PayloadAction<BaselineWidthValues>
+    ) => {
+      state.baselineWidth = action.payload;
+    },
   },
 });
 
@@ -68,6 +77,7 @@ export const {
   setPdfFontStyleValue,
   setPdfFontStyleLabel,
   setPdfFontStyle,
+  setPdfBaselineWidth,
 } = pdfSlice.actions;
 export const pdfReducer = pdfSlice.reducer;
 export const selectPdfSlice = (state: RootState) => state[sliceKey];

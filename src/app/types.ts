@@ -6,6 +6,16 @@ export type InjectComp =
   | ((prop?: any) => JSX.Element);
 
 export type RowSize = "XS" | "SM" | "MD" | "LG" | "XL";
+export enum BaselineWidth {
+  XS = 0.1,
+  SM = 0.4,
+  MD = 1,
+  LG = 1.6,
+  XL = 2,
+}
+export type BaselineWidthKeys = keyof typeof BaselineWidth;
+export type BaselineWidthValues = (typeof BaselineWidth)[BaselineWidthKeys];
+
 export type SVGMaxHeight = 765;
 
 export type Languages = {
