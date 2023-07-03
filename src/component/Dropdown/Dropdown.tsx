@@ -7,6 +7,7 @@ import {
   DropdownOption,
   FontStyle,
   LanguageKeys,
+  RowSize,
 } from "../../app/types";
 import React from "react";
 import { RootState } from "../../app/store";
@@ -15,11 +16,13 @@ import {
   baselineWidthOptions,
   fontStyleOption_uyghur,
   langueOptions,
+  baselineSizeOptions,
 } from "./dropdownOptions";
 import { Dispatch } from "@reduxjs/toolkit";
 import "./Dropdown.scss";
 import {
   selectRCardTitle16,
+  selectRDropLabel18,
   selectRDropLabel19,
   selectRDropLabel20,
   setLangOptionOpen,
@@ -31,6 +34,7 @@ import {
   setPdfBaselineWidth,
   setPdfFontStyle,
   setPdfRefresh,
+  setPdfBaselineSize,
 } from "../../features/pdf/pdfSlice";
 
 type HandleClick = (value: any) => void;
@@ -195,6 +199,28 @@ export const TextOpacityOption = connect(
     return {
       handleClick: (value: TextOpacityKeys) => {
         dispatch(setPdfTextOpacity(TextOpacity[value]));
+        dispatch(setPdfRefresh());
+      },
+    };
+  }
+)(Dropdown);
+
+//TextOpacity
+export const BaselineSizeOption = connect(
+  //-----mapProps
+  (state: RootState, ownProps: {}): ComponentProps => {
+    const labelText = selectRDropLabel18(state);
+    return {
+      options: baselineSizeOptions,
+      componentId: "BaselineSizeOption",
+      label: labelText,
+    };
+  },
+  //-----mapDispatch
+  (dispatch: Dispatch<any>) => {
+    return {
+      handleClick: (value: RowSize) => {
+        dispatch(setPdfBaselineSize(value));
         dispatch(setPdfRefresh());
       },
     };
