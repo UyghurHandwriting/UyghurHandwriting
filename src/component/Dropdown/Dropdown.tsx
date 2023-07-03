@@ -73,6 +73,7 @@ export const Dropdown = ({
   );
   const labelClassName = classnames(
     "DropdownLabel",
+    "label-secondary",
     componentId + "label",
     className?.label
   );

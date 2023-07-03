@@ -10,6 +10,7 @@ import {
   BaselineSizeOption,
 } from "../Dropdown/Dropdown";
 import { DownloadPdf } from "../pdf/DownloadPdf";
+import { PdfTitleInput } from "../TextInput/TextInput";
 type Props = {};
 
 export const TextSetting = (props: Props) => {
@@ -23,6 +24,7 @@ export const TextSetting = (props: Props) => {
         <BaselineWidthOption />
         <TextOpacityOption />
         <BaselineSizeOption />
+        <PdfTitleInput />
         <DownloadPdf />
       </div>
     </>
