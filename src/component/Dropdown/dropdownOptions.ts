@@ -1,4 +1,11 @@
-import { DropdownOption, FontStyle, LanguageKeys } from "../../app/types";
+import {
+  TextOpacityKeys,
+  BaselineWidth,
+  BaselineWidthKeys,
+  DropdownOption,
+  FontStyle,
+  LanguageKeys,
+} from "../../app/types";
 
 export const langueOptions: DropdownOption<LanguageKeys>[] = [
   {
@@ -30,5 +37,52 @@ export const fontStyleOption_uyghur: DropdownOption<FontStyle>[] = [
   {
     value: FontStyle.AlpEkran,
     label: "Alp ekran",
+  },
+];
+
+export const baselineWidthOptions: DropdownOption<BaselineWidthKeys, string>[] =
+  [
+    {
+      value: "XS",
+      label: "Thinnest",
+    },
+    {
+      value: "SM",
+      label: "Thin",
+    },
+    {
+      value: "MD",
+      label: "Medium",
+    },
+    {
+      value: "LG",
+      label: "Thick",
+    },
+    {
+      value: "XL",
+      label: "Thickest",
+    },
+  ];
+
+export const textOpacityOptions: DropdownOption<TextOpacityKeys, string>[] = [
+  {
+    value: "XS",
+    label: "Lightest",
+  },
+  {
+    value: "SM",
+    label: "Light",
+  },
+  {
+    value: "MD",
+    label: "Medium",
+  },
+  {
+    value: "LG",
+    label: "Dark",
+  },
+  {
+    value: "XL",
+    label: "Darkest",
   },
 ];

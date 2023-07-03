@@ -15,6 +15,7 @@ export const PdfBaseLine = ({}: Props) => {
   const language = pdfSlice.language;
   const size = pdfSlice.baseLineSize;
   const color = pdfSlice.baseLineColor;
+  const strokeWidth = pdfSlice.baselineWidth;
   return (
     <Svg style={styles.svg}>
       <Path
@@ -23,7 +24,7 @@ export const PdfBaseLine = ({}: Props) => {
           numRow: 1,
           size,
         })}
-        strokeWidth={0.4}
+        strokeWidth={strokeWidth}
         stroke={color}
       />
     </Svg>

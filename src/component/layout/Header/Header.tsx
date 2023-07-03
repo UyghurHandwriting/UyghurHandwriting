@@ -15,7 +15,6 @@ export const Header = () => {
   const [isHeaderFolded, setIsHeaderFolded] = useState(false);
   const homeText = useSelector(selectHeaderNav1);
   const aboutText = useSelector(selectHeaderNav2);
-  console.log(aboutText, homeText);
   //---header scroll effect
   useEffect(() => {
     const handleScroll = () => {

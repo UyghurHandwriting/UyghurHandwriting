@@ -32,7 +32,6 @@ export const LangImgDropdown = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
     const langOptionOpen = selectLangOptionOpen(state);
-    console.log(langOptionOpen);
     return {
       DropdownImg: LanguageIcon,
       DropdownOption: langOptionOpen ? LanguageOption : EmptyComp,
