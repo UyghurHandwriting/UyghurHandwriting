@@ -1,17 +1,19 @@
 @import "../../style/variables.scss";
-
+@import "../../style/mixin.scss";
+.header-container {
+  height: $header--height;
+  width: 100%;
+}
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: size(8);
+  height: $header--height;
   background-color: $color-primary-black;
   z-index: 100; /* Adjust the z-index value as needed */
   transition: top 0.3s, transform 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include center-flex;
 }
 
 .header.folded {

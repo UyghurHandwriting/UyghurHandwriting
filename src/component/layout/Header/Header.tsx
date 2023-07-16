@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import { PrimaryNav } from "../../Nav/PrimaryNav";
 import { PrimaryNavItem } from "../../Nav/PrimaryNavItem";
-
 import { LangImgDropdown } from "../../ImageDropdown/ImageDropdown";
 import { useSelector } from "react-redux";
 import {
@@ -28,25 +27,27 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isHeaderFolded ? "folded" : ""}`}>
-      <div className="sideCol"></div>
-      <div className="middleCol">
-        <PrimaryNav>
-          <PrimaryNavItem
-            textStyle={{ color: "white" }}
-            text={homeText}
-            href="/"
-          />
-          <PrimaryNavItem
-            textStyle={{ color: "white" }}
-            text={aboutText}
-            href="/about"
-          />
-        </PrimaryNav>
-      </div>
-      <div className="sideCol">
-        <LangImgDropdown />
-      </div>
-    </header>
+    <div className="header-container">
+      <header className={`header ${isHeaderFolded ? "folded" : ""}`}>
+        <div className="sideCol"></div>
+        <div className="middleCol">
+          <PrimaryNav>
+            <PrimaryNavItem
+              textStyle={{ color: "white" }}
+              text={homeText}
+              href="/"
+            />
+            <PrimaryNavItem
+              textStyle={{ color: "white" }}
+              text={aboutText}
+              href="/about"
+            />
+          </PrimaryNav>
+        </div>
+        <div className="sideCol">
+          <LangImgDropdown />
+        </div>
+      </header>
+    </div>
   );
 };

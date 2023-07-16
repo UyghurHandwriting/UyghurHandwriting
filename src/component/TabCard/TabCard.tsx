@@ -9,29 +9,30 @@ import {
 } from "../../features/language/languageSlice";
 import { EmptyComp } from "../EmptyComp";
 import { RootState } from "../../app/store";
-import { TextAreaMain } from "../TextArea";
 import { PrimaryNav } from "../Nav/PrimaryNav";
 import { PrimaryNavItem } from "../Nav/PrimaryNavItem";
 import { TextSetting } from "../WSheetSetting/TextSetting";
+import classNames from "classnames";
 
 type TabCardType = { title: string; content: InjectComp };
 interface ComponentProps {
   tabCards: TabCardType[];
   componentId: string;
+  classes?: string;
 }
 interface ComponentDispatch {}
 type Props = ComponentProps & ComponentDispatch;
 
-const TabCard = ({ tabCards, componentId }: Props) => {
+const TabCard = ({ tabCards, componentId, classes }: Props) => {
   const [activeTab, setActiveTab] = useState(0);
   const Content = tabCards[activeTab].content;
-
+  const compClassName = classNames("TabCard--container", classes);
   const handleTabClick = (index: number) => {
     setActiveTab(index);
   };
 
   return (
-    <div>
+    <div className={compClassName}>
       <div className="TabCard--tab-header">
         <PrimaryNav>
           {tabCards.map((tab, index) => (
@@ -58,7 +59,7 @@ const TabCard = ({ tabCards, componentId }: Props) => {
 
 export const WorksheetSettings = connect(
   //-----mapProps
-  (state: RootState, ownProps: {}): ComponentProps => {
+  (state: RootState, ownProps: { classes?: string }): ComponentProps => {
     const textText = selectRNav5(state);
     const fontText = selectRNav6(state);
     const pageText = selectRNav7(state);
@@ -72,6 +73,7 @@ export const WorksheetSettings = connect(
     return {
       tabCards,
       componentId: "WorksheetSettings",
+      classes: ownProps.classes,
     };
   }
 )(TabCard);

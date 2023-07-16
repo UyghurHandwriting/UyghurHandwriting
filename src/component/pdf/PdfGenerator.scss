@@ -1,4 +1,5 @@
+@import "../style/mixin.scss";
+
 .pdfContainer {
-  width: 25vw;
-  height: 63vh;
+  @include pdf-scale-letter(50);
 }

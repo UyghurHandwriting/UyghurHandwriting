@@ -2,3 +2,14 @@
   margin: 0;
   padding: 0;
 }
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin pdf-scale-letter($scalar) {
+  width: ($scalar * 8.5px);
+  height: ($scalar * 11px);
+}

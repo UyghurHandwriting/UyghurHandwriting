@@ -5,6 +5,7 @@ type Props = {
   className?: string | undefined;
   reverse?: boolean;
   mobileReverse?: boolean;
+  style?: React.CSSProperties;
 } & PropsWithChildren;
 
 export const VerticalTwoColumn = ({
@@ -12,11 +13,16 @@ export const VerticalTwoColumn = ({
   className,
   reverse = false,
   mobileReverse = true,
+  style,
 }: Props) => {
   const componentClassName = classnames("twoColumn", className, {
     reverse,
     mobileReverse,
   });
 
-  return <div className={componentClassName}>{children}</div>;
+  return (
+    <div className={componentClassName} style={{ ...style }}>
+      {children}
+    </div>
+  );
 };

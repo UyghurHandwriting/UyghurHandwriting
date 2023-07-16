@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setPdfRefresh } from "../features/pdf/pdfSlice";
 import { Header } from "../component/layout/Header/Header";
 import { WorksheetSettings } from "../component/TabCard/TabCard";
+import "./Home.scss";
 type Props = {};
 
 export function Home({}: Props) {
@@ -14,11 +15,13 @@ export function Home({}: Props) {
   };
 
   return (
-    <div style={{ marginTop: "8rem" }}>
+    <div className="HomePage--container">
       <Header />
       <VerticalTwoColumn>
-        <PdfGenerator />
-        <div className="">
+        <div className="HomePage-pdfGenerator--container">
+          <PdfGenerator />
+        </div>
+        <div className="HomePage-worksheetSettings--container">
           <WorksheetSettings />
         </div>
       </VerticalTwoColumn>
