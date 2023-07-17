@@ -17,16 +17,14 @@ export const DownloadPdf = () => {
   useEffect(updateInstance, [refresh]);
 
   return (
-    <div>
-      <DownloadPdfBtn>
-        <a
-          className="no-default-a"
-          href={instance.url ?? undefined}
-          download="uzhet.pdf"
-        >
-          {downloadText}
-        </a>
-      </DownloadPdfBtn>
-    </div>
+    <DownloadPdfBtn>
+      <a
+        className="no-default-a"
+        href={instance.url ?? undefined}
+        download="uzhet.pdf"
+      >
+        {downloadText}
+      </a>
+    </DownloadPdfBtn>
   );
 };

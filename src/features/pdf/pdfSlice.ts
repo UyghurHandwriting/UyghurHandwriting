@@ -81,6 +81,9 @@ export const pdfSlice = createSlice({
     setPdfTitle: (state, action: PayloadAction<string>) => {
       state.title = action.payload;
     },
+    setShowToolbar: (state, action: PayloadAction<boolean>) => {
+      state.showToolbar = action.payload;
+    },
   },
 });
 
@@ -95,6 +98,7 @@ export const {
   setPdfTextOpacity,
   setPdfTitle,
   setPdfBaselineSize,
+  setShowToolbar,
 } = pdfSlice.actions;
 export const pdfReducer = pdfSlice.reducer;
 export const selectPdfSlice = (state: RootState) => state[sliceKey];

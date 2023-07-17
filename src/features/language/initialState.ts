@@ -152,7 +152,7 @@ export const initialLangState: InitialLangState = {
   rDropLabel18: {
     english: "Font size",
     turkish: "Turkish",
-    uyghur: "خەت نۇسخىسى ئۆلچىمى",
+    uyghur: "خەت ئۆلچىمى",
     uyghurLatin: "Xet nusxisi ölchimi",
     chinese: "字体大小",
   },

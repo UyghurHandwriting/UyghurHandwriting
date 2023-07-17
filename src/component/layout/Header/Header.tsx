@@ -8,7 +8,7 @@ import {
   selectHeaderNav1,
   selectHeaderNav2,
 } from "../../../features/language/languageSlice";
-
+import { HeaderLogo } from "../../HeaderLogo/HeaderLogo";
 type Props = {};
 export const Header = () => {
   const [isHeaderFolded, setIsHeaderFolded] = useState(false);
@@ -29,7 +29,9 @@ export const Header = () => {
   return (
     <div className="header-container">
       <header className={`header ${isHeaderFolded ? "folded" : ""}`}>
-        <div className="sideCol"></div>
+        <div className="sideCol">
+          <HeaderLogo />
+        </div>
         <div className="middleCol">
           <PrimaryNav>
             <PrimaryNavItem
