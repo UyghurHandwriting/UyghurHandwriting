@@ -50,6 +50,7 @@ export const TextAreaMain = (props: Props) => {
   return (
     <textarea
       value={textValue}
+      spellCheck="false"
       onChange={handleTextChange}
       className={componentClassName}
     />

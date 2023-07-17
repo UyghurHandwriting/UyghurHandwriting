@@ -1,0 +1,12 @@
+@import "../style/functions.scss";
+.TextSetting--TextAreaMain--container {
+  height: 200px;
+  margin-top: size(3);
+  margin-bottom: size(3);
+}
+
+.TextSetting--settings--container {
+  display: flex;
+  flex-direction: column;
+  gap: size(1);
+}

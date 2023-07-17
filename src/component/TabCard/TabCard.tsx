@@ -49,7 +49,7 @@ const TabCard = ({ tabCards, componentId, classes }: Props) => {
           ))}
         </PrimaryNav>
       </div>
-      <hr />
+      <hr className="TabCard--tab__hr" />
       <div className="TabCard--tab-content">
         <Content />
       </div>

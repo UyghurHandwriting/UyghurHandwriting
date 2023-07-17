@@ -27,7 +27,8 @@
 }
 
 .label-secondary {
-  margin-right: size(3);
+  display: inline-block;
   font-size: $font-size-text-sm;
   color: $palette-gray-900;
+  width: size(17);
 }

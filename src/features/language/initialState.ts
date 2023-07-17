@@ -138,7 +138,7 @@ export const initialLangState: InitialLangState = {
   rCardTitle16: {
     english: "Font options",
     turkish: "Turkish",
-    uyghur: "خەت نۇسخىسنى تاللاش",
+    uyghur: "خەت نۇسخىسنى ",
     uyghurLatin: "Xet nusxisni tallash",
     chinese: "字体样式",
   },

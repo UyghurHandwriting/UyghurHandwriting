@@ -41,7 +41,10 @@ export const TextInput = ({
   const pdfLanguage: LanguageKeys = useSelector(selectPdfLanguage);
   const textDirection: DirectionStyle = getPdfTextDirection(pdfLanguage);
   const componentClassName: string = classNames("TextInputGroup", classes);
-  const componentLabelClassName: string = classNames("label-secondary");
+  const componentLabelClassName: string = classNames(
+    "label-secondary",
+    "TextInput--label"
+  );
   const componentInputClassName: string = classNames(
     "TextInputInput",
     textDirection

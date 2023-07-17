@@ -17,8 +17,10 @@ export const TextSetting = (props: Props) => {
   const baselineText = useSelector(selectRCardTitle9);
   return (
     <>
-      <TextAreaMain />
-      <div className="">
+      <div className="TextSetting--TextAreaMain--container">
+        <TextAreaMain />
+      </div>
+      <div className="TextSetting--settings--container">
         <p className="text-md">{baselineText} </p>
         <FontStyleOption />
         <BaselineWidthOption />

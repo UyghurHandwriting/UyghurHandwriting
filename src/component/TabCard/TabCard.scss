@@ -1,4 +1,10 @@
 @import "../style/variables.scss";
+@import "../style/functions.scss";
+
 .TabCard--tab-text {
   font-size: $font-size-text-sm;
+}
+
+.TabCard--tab__hr {
+  margin-top: size(1);
 }
