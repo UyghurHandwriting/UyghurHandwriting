@@ -1,7 +1,11 @@
+import { splitWords } from "./splitWords";
+
 type Props = { text: string; chunkSize: number };
 
 export const splitText = ({ text, chunkSize }: Props): string[] => {
-  const words: string[] = text.split(" ");
+  const spaceSplit: string[] = text.split(" ");
+  //in the case where word exceeds chunkSize, split words
+  const words: string[] = splitWords(spaceSplit, chunkSize);
   const result: string[] = new Array(Math.ceil(words.length / chunkSize));
 
   let currentString = "";
@@ -10,8 +14,8 @@ export const splitText = ({ text, chunkSize }: Props): string[] => {
   for (let i = 0; i < words.length; i++) {
     const word = words[i];
 
-    // Check if adding the current word exceeds the maximum length
     if (currentString.length + word.length <= chunkSize) {
+      // Check if adding the current word exceeds the maximum length
       // Add the word to the current string
       currentString += (currentString ? " " : "") + word;
     } else {

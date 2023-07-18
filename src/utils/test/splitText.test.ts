@@ -2,19 +2,22 @@ import { splitText } from "../pdf/splitText";
 
 describe("splitText", () => {
   it("should split the text into chunks based on the given chunkSize", () => {
-    const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+    const text = "Lorem ipsum dolor sit amet, consectetur adipis elit.";
     const chunkSize = 10;
 
     const expected = [
       "Lorem ipsum",
       "dolor sit",
       "amet,",
-      "consectetur",
-      "adipiscing",
+      "consectetu",
+      "r adipis",
       "elit.",
     ];
 
     const result = splitText({ text, chunkSize });
+    console.log(result);
+    console.log(expected);
+
     expect(result).toEqual(expected);
   });
 

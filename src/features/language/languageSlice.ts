@@ -84,3 +84,11 @@ export const selectRDropLabel23 = (state: RootState) =>
 
 export const selectRBtn12 = (state: RootState) =>
   selectLangText(state)("rBtn12");
+
+export const selectFTitle33 = (state: RootState) =>
+  selectLangText(state)("fTitle33");
+
+export const selectFSubTitle34 = (state: RootState) =>
+  selectLangText(state)("fSubTitle34");
+export const selectFPhone35 = (state: RootState) =>
+  selectLangText(state)("fPhone35");

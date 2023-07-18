@@ -1,0 +1,41 @@
+@import "../../style/variables.scss";
+@import "../../style/functions.scss";
+@import "../../style/mixin.scss";
+
+.Footer {
+  background-color: $color-primary-black;
+  @include center-flex;
+}
+
+.Footer--content {
+  margin: size(4);
+  @include center-flex;
+  flex-direction: column;
+}
+
+.Footer--text {
+  color: $color-primary-gray-light;
+  margin: size(1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: size(2);
+  & > * {
+    font-size: $font-size-text-md2;
+  }
+}
+
+.Footer--social-icon--group {
+  margin-top: size(2);
+  display: flex;
+  gap: size(3);
+}
+
+.Footer--social-icon {
+  color: $color-primary-gray-light;
+  font-size: size(3);
+  transition: color 0.3s;
+  &:hover {
+    color: $color-primary-green;
+  }
+}
