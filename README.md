@@ -15,3 +15,5 @@
 ## Style ClassName Rules:
 
 1. component level styles or styles that applies to that component myst start with component name with capital letter.
+
+TODO: Jul 18: turn all dropdownOptions to selector like "selectLanguageOptions" so that they are multi lingual

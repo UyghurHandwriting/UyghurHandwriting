@@ -8,6 +8,8 @@ import {
   FontStyleKeys,
   LanguageKeys,
   RowSize,
+  TextOpacityKeys,
+  BaselineWidthKeys,
 } from "../../app/types";
 import { toNumber } from "lodash";
 
@@ -20,8 +22,8 @@ export type PdfInitialState = {
   baseLineColor: string;
   baseLineGap: number;
   text: string;
-  baselineWidth: BaselineWidthValues;
-  textOpacity: TextOpacityValues;
+  baselineWidth: BaselineWidthKeys;
+  textOpacity: TextOpacityKeys;
   title: string;
 };
 
@@ -30,15 +32,14 @@ export const initialState: PdfInitialState = {
   forceRefresh: false,
   language: "uyghur",
   languageStyle: { value: FontStyle.UKIJElipbe, label: "UKIJElipbe" },
-  baseLineSize: "XL",
+  baseLineSize: "MD",
   baseLineColor: "rgba(103,102,102,255)",
   baseLineGap: 10,
-  baselineWidth: 0.4,
-  textOpacity: 0.5,
+  baselineWidth: "MD",
+  textOpacity: "MD",
   title: "",
-  text: "  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې  ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې ئابپتجچخدرزژسشغفقكڭگلمنھەوۆۇۈۋيىې ئ ا ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك ڭ گ ل م ن ھ ە و ۆ ۇ ۈ ۋ ي ى ې",
+  text: " يېقىنقى يىللاردىن باشلاپ دۇنيا ئېلېكتىرونلۇق مۇزىكا ساھەسىدە كۆزگە كۆرۈنۈشكە باشلىغان ھەسەن ۋە ئىرپان بۇ مۇزىكا فېستىۋالىنىڭ ئىككىنچى كۈنى، يەنى 14-ئىيۇل فىرانسىيە دۆلەت بايرىمىدا، تاماشىبىنلارغا ئۆزلىرىنىڭ نەق مەيداندا ئورۇنلاش ماھارىتىنى كۆرسەتكەن. مۇزىكا رىتىمىغا ماس ھالدا، ئارىلاپ ئۇلار بىز «ئۈنسىز ئەترىتى» ، «بىز ئۇيغۇر» دېگەن جاراڭلىق سادالارنى ياڭراتقان.",
 };
-
 export const sliceKey = "pdf";
 export const pdfSlice = createSlice({
   name: sliceKey,
@@ -66,13 +67,10 @@ export const pdfSlice = createSlice({
       state.languageStyle.value = action.payload;
       state.languageStyle.label = label;
     },
-    setPdfBaselineWidth: (
-      state,
-      action: PayloadAction<BaselineWidthValues>
-    ) => {
+    setPdfBaselineWidth: (state, action: PayloadAction<BaselineWidthKeys>) => {
       state.baselineWidth = action.payload;
     },
-    setPdfTextOpacity: (state, action: PayloadAction<TextOpacityValues>) => {
+    setPdfTextOpacity: (state, action: PayloadAction<TextOpacityKeys>) => {
       state.textOpacity = action.payload;
     },
     setPdfBaselineSize: (state, action: PayloadAction<RowSize>) => {
@@ -109,3 +107,11 @@ export const selectPdfText = (state: RootState) => state[sliceKey].text;
 export const selectPdfTitle = (state: RootState) => state[sliceKey].title;
 export const selectPdfRefresh = (state: RootState) =>
   state[sliceKey].forceRefresh;
+export const selectPdfLangStyle = (state: RootState) =>
+  state[sliceKey].languageStyle.value;
+export const selectPdfBaselineSize = (state: RootState) =>
+  state[sliceKey].baseLineSize;
+export const selectPdfBaselineWidth = (state: RootState) =>
+  state[sliceKey].baselineWidth;
+export const selectPdfTextOpacity = (state: RootState) =>
+  state[sliceKey].textOpacity;

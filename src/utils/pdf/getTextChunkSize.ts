@@ -4,7 +4,7 @@ export const getTextChunkSize = (key: RowSize): number => {
   const fontTable: RowSizeMap<number> = {
     XS: 55,
     SM: 45,
-    MD: 34,
+    MD: 32,
     LG: 25,
     XL: 19,
   };

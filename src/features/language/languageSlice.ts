@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { InitialLangState, initialLangState } from "./initialState";
-import { LanguageKeys } from "../../app/types";
+import { LanguageKeys, DropdownOption } from "../../app/types";
 import { RootState } from "../../app/store";
 
 type InitialState = InitialLangState & {
@@ -92,3 +92,67 @@ export const selectFSubTitle34 = (state: RootState) =>
   selectLangText(state)("fSubTitle34");
 export const selectFPhone35 = (state: RootState) =>
   selectLangText(state)("fPhone35");
+export const selectOption38 = (state: RootState) =>
+  selectLangText(state)("option38");
+export const selectOption39 = (state: RootState) =>
+  selectLangText(state)("option39");
+export const selectOption40 = (state: RootState) =>
+  selectLangText(state)("option40");
+export const selectOption42 = (state: RootState) =>
+  selectLangText(state)("option42");
+export const selectOption43 = (state: RootState) =>
+  selectLangText(state)("option43");
+export const selectOption44 = (state: RootState) =>
+  selectLangText(state)("option44");
+export const selectOption45 = (state: RootState) =>
+  selectLangText(state)("option45");
+export const selectOption46 = (state: RootState) =>
+  selectLangText(state)("option46");
+export const selectOption47 = (state: RootState) =>
+  selectLangText(state)("option47");
+export const selectOption48 = (state: RootState) =>
+  selectLangText(state)("option38");
+export const selectOption49 = (state: RootState) =>
+  selectLangText(state)("option49");
+export const selectOption50 = (state: RootState) =>
+  selectLangText(state)("option50");
+export const selectOption51 = (state: RootState) =>
+  selectLangText(state)("option51");
+export const selectOption52 = (state: RootState) =>
+  selectLangText(state)("option52");
+export const selectOption53 = (state: RootState) =>
+  selectLangText(state)("option53");
+export const selectOption54 = (state: RootState) =>
+  selectLangText(state)("option54");
+export const selectOption55 = (state: RootState) =>
+  selectLangText(state)("option55");
+export const selectOption56 = (state: RootState) =>
+  selectLangText(state)("option56");
+export const selectOption57 = (state: RootState) =>
+  selectLangText(state)("option57");
+export const selectOption58 = (state: RootState) =>
+  selectLangText(state)("option58");
+export const selectOption59 = (state: RootState) =>
+  selectLangText(state)("option59");
+export const selectLanguageOptions = (
+  state: RootState
+): DropdownOption<LanguageKeys>[] => {
+  return [
+    {
+      value: "uyghur",
+      label: selectLangText(state)("option38"),
+    },
+    {
+      value: "english",
+      label: selectLangText(state)("option39"),
+    },
+    {
+      value: "turkish",
+      label: selectLangText(state)("option40"),
+    },
+    {
+      value: "chinese",
+      label: selectLangText(state)("option42"),
+    },
+  ];
+};

@@ -1,8 +1,6 @@
 import { connect } from "react-redux";
 import {
-  TextOpacity,
   TextOpacityKeys,
-  BaselineWidth,
   BaselineWidthKeys,
   DropdownOption,
   FontStyle,
@@ -15,16 +13,17 @@ import {
   textOpacityOptions,
   baselineWidthOptions,
   fontStyleOption_uyghur,
-  langueOptions,
   baselineSizeOptions,
 } from "./dropdownOptions";
 import { Dispatch } from "@reduxjs/toolkit";
 import "./Dropdown.scss";
 import {
+  selectLanguageOptions,
   selectRCardTitle16,
   selectRDropLabel18,
   selectRDropLabel19,
   selectRDropLabel20,
+  selectSiteLanguage,
   setLangOptionOpen,
   setSiteLanguage,
 } from "../../features/language/languageSlice";
@@ -35,6 +34,10 @@ import {
   setPdfFontStyle,
   setPdfRefresh,
   setPdfBaselineSize,
+  selectPdfLangStyle,
+  selectPdfBaselineSize,
+  selectPdfBaselineWidth,
+  selectPdfTextOpacity,
 } from "../../features/pdf/pdfSlice";
 
 type HandleClick = (value: any) => void;
@@ -50,6 +53,7 @@ interface ComponentProps {
   componentId: string;
   label?: string;
   size?: number;
+  value?: string | number;
 }
 interface ComponentDispatch {
   handleClick?: HandleClick;
@@ -62,6 +66,7 @@ export const Dropdown = ({
   componentId,
   label,
   size,
+  value,
   handleClick = () => {},
 }: Props) => {
   //
@@ -104,11 +109,12 @@ export const Dropdown = ({
         id={componentId + "-select"}
         className={selectClassName}
         onChange={(e) => handleClick(e.target.value)}
+        defaultValue={value}
       >
         {options.map((option) => (
           <option
             value={option.value}
-            key={option.value}
+            key={componentId + option.value + "key"}
             className={optionClassName}
           >
             {option.label}
@@ -122,11 +128,14 @@ export const Dropdown = ({
 export const LanguageOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
+    const value = selectSiteLanguage(state);
+    const langueOptions = selectLanguageOptions(state);
     return {
       options: langueOptions,
       className: { group: "langueOptionStyle", select: "no-padding" },
       componentId: "LanguageOptions",
       size: langueOptions.length,
+      value,
     };
   },
   //-----mapDispatch
@@ -144,11 +153,13 @@ export const FontStyleOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
     const labelText = selectRCardTitle16(state);
+    const value = selectPdfLangStyle(state);
     return {
       options: fontStyleOption_uyghur,
       className: { group: "FontStyleOptionStyle" },
       componentId: "FontStyleOption",
       label: labelText,
+      value,
     };
   },
   //-----mapDispatch
@@ -167,17 +178,19 @@ export const BaselineWidthOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
     const labelText = selectRDropLabel19(state);
+    const value = selectPdfBaselineWidth(state);
     return {
       options: baselineWidthOptions,
       componentId: "BaselineWidthOption",
       label: labelText,
+      value,
     };
   },
   //-----mapDispatch
   (dispatch: Dispatch<any>) => {
     return {
       handleClick: (value: BaselineWidthKeys) => {
-        dispatch(setPdfBaselineWidth(BaselineWidth[value]));
+        dispatch(setPdfBaselineWidth(value));
         dispatch(setPdfRefresh());
       },
     };
@@ -189,17 +202,19 @@ export const TextOpacityOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
     const labelText = selectRDropLabel20(state);
+    const value = selectPdfTextOpacity(state);
     return {
       options: textOpacityOptions,
       componentId: "TextOpacityOption",
       label: labelText,
+      value,
     };
   },
   //-----mapDispatch
   (dispatch: Dispatch<any>) => {
     return {
       handleClick: (value: TextOpacityKeys) => {
-        dispatch(setPdfTextOpacity(TextOpacity[value]));
+        dispatch(setPdfTextOpacity(value));
         dispatch(setPdfRefresh());
       },
     };
@@ -210,11 +225,13 @@ export const TextOpacityOption = connect(
 export const BaselineSizeOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
+    const value = selectPdfBaselineSize(state);
     const labelText = selectRDropLabel18(state);
     return {
       options: baselineSizeOptions,
       componentId: "BaselineSizeOption",
       label: labelText,
+      value,
     };
   },
   //-----mapDispatch

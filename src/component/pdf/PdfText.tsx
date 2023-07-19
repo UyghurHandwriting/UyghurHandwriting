@@ -7,6 +7,7 @@ import { getPdfFontSize } from "../../utils/pdf/getPdfFontSize";
 import { getStyleLineTop } from "../../utils/pdf/getStyleLineTop";
 import { getRowGap } from "../../utils/pdf/getRowGap";
 import { getTextChunkSize } from "../../utils/pdf/getTextChunkSize";
+import { TextOpacity } from "../../app/types";
 type Props = {};
 
 const styles = StyleSheet.create({
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     direction: "rtl",
     position: "relative",
+    paddingRight: "8px",
   },
 });
 
@@ -45,7 +47,7 @@ export const PdfText = ({}: Props) => {
                 fontSize,
                 top,
                 fontFamily,
-                opacity: textOpacity,
+                opacity: TextOpacity[textOpacity],
               }}
             >
               {str}

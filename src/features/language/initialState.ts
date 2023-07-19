@@ -45,6 +45,27 @@ export type InitialLangState = {
   fTitle33: Languages;
   fSubTitle34: Languages;
   fPhone35: Languages;
+  option38: Languages;
+  option39: Languages;
+  option40: Languages;
+  option42: Languages;
+  option43: Languages;
+  option44: Languages;
+  option45: Languages;
+  option46: Languages;
+  option47: Languages;
+  option48: Languages;
+  option49: Languages;
+  option50: Languages;
+  option51: Languages;
+  option52: Languages;
+  option53: Languages;
+  option54: Languages;
+  option55: Languages;
+  option56: Languages;
+  option57: Languages;
+  option58: Languages;
+  option59: Languages;
 };
 
 export const initialLangState: InitialLangState = {
@@ -309,5 +330,152 @@ export const initialLangState: InitialLangState = {
     uyghur: "ئالاقىلىشىش تېلېفون نومۇرى",
     uyghurLatin: "Alaqilishish téléfon nomuri",
     chinese: "13545675127",
+  },
+  option47: {
+    english: "Thinnest",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option48: {
+    english: "Thin",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option49: {
+    english: "Medium",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option50: {
+    english: "Thick",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option51: {
+    english: "Thickest",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option52: {
+    english: "Lightest",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option53: {
+    english: "Light",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option54: {
+    english: "Dark",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option55: {
+    english: "Darkest",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option56: {
+    english: "Smallest",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option57: {
+    english: "Small",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option58: {
+    english: "Large",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option59: {
+    english: "Largest",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option38: {
+    english: "Uyghurche",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option39: {
+    english: "English",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option40: {
+    english: "Turkish",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option42: {
+    english: "Chinese",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option43: {
+    english: "UyghurLatin",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option44: {
+    english: "Elipbe",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option45: {
+    english: "Chekitlik",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+  option46: {
+    english: "Alp ekran",
+    turkish: "turkish",
+    uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
   },
 };

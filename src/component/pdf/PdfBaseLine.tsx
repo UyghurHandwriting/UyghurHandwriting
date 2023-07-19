@@ -3,7 +3,7 @@ import { Svg, Path, StyleSheet } from "@react-pdf/renderer/";
 import getLineGroup from "../../utils/pdf/getLineGroup";
 import { PdfInitialState } from "../../features/pdf/pdfSlice";
 import { getPdfSlice } from "../../utils/pdf/getPdfSlice";
-
+import { BaselineWidth } from "../../app/types";
 type Props = {};
 
 const styles = StyleSheet.create({
@@ -11,11 +11,15 @@ const styles = StyleSheet.create({
 });
 
 export const PdfBaseLine = ({}: Props) => {
-  const pdfSlice: PdfInitialState = getPdfSlice();
-  const language = pdfSlice.language;
-  const size = pdfSlice.baseLineSize;
-  const color = pdfSlice.baseLineColor;
-  const strokeWidth = pdfSlice.baselineWidth;
+  const {
+    language,
+    baseLineSize,
+    baseLineColor,
+    baselineWidth,
+  }: PdfInitialState = getPdfSlice();
+  const size = baseLineSize;
+  const color = baseLineColor;
+  const strokeWidth = BaselineWidth[baselineWidth];
   return (
     <Svg style={styles.svg}>
       <Path
