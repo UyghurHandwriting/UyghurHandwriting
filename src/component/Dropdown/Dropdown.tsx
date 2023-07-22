@@ -18,7 +18,6 @@ import {
 import { Dispatch } from "@reduxjs/toolkit";
 import "./Dropdown.scss";
 import {
-  selectLanguageOptions,
   selectRCardTitle16,
   selectRDropLabel18,
   selectRDropLabel19,
@@ -40,6 +39,7 @@ import {
   selectPdfTextOpacity,
 } from "../../features/pdf/pdfSlice";
 
+import { languageOptions } from "./dropdownOptions";
 type HandleClick = (value: any) => void;
 type DropdownClassName = {
   group?: string;
@@ -69,7 +69,6 @@ export const Dropdown = ({
   value,
   handleClick = () => {},
 }: Props) => {
-  //
   //---class names
   const groupClassName = classnames(
     componentId,
@@ -94,21 +93,30 @@ export const Dropdown = ({
     className?.option
   );
 
+  const handleChange = (
+    element: React.MouseEvent<HTMLSelectElement, MouseEvent>
+  ) => {
+    const target = element.target as HTMLOptionElement;
+    handleClick(target.value);
+  };
+
   return (
     <div id={componentId} className={groupClassName}>
-      <label
-        id={(componentId = "-label")}
-        htmlFor={componentId + "select"}
-        className={labelClassName}
-      >
-        {label}
-      </label>
+      {!!label && (
+        <label
+          id={(componentId = "-label")}
+          htmlFor={componentId + "select"}
+          className={labelClassName}
+        >
+          {label}
+        </label>
+      )}
 
       <select
         size={size}
         id={componentId + "-select"}
         className={selectClassName}
-        onChange={(e) => handleClick(e.target.value)}
+        onMouseDown={handleChange}
         defaultValue={value}
       >
         {options.map((option) => (
@@ -129,12 +137,11 @@ export const LanguageOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
     const value = selectSiteLanguage(state);
-    const langueOptions = selectLanguageOptions(state);
     return {
-      options: langueOptions,
+      options: languageOptions,
       className: { group: "langueOptionStyle", select: "no-padding" },
       componentId: "LanguageOptions",
-      size: langueOptions.length,
+      size: languageOptions.length,
       value,
     };
   },
@@ -142,8 +149,8 @@ export const LanguageOption = connect(
   (dispatch: Dispatch<any>) => {
     return {
       handleClick: (value: LanguageKeys) => {
-        dispatch(setSiteLanguage(value));
         dispatch(setLangOptionOpen());
+        dispatch(setSiteLanguage(value));
       },
     };
   }

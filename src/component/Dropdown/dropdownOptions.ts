@@ -3,6 +3,7 @@ import {
   BaselineWidthKeys,
   DropdownOption,
   FontStyle,
+  LanguageKeys,
 } from "../../app/types";
 
 export const fontStyleOption_uyghur: DropdownOption<FontStyle>[] = [
@@ -89,3 +90,26 @@ export const baselineSizeOptions: DropdownOption<TextOpacityKeys, string>[] = [
     label: "Largest",
   },
 ];
+
+export const languageOptions: DropdownOption<LanguageKeys, string>[] = [
+  {
+    value: "uyghur",
+    label: "ئۇيغۇرچە",
+  },
+  {
+    value: "english",
+    label: "English",
+  },
+  {
+    value: "turkish",
+    label: "Türkçe",
+  },
+  {
+    value: "chinese",
+    label: "中文",
+  },
+];
+
+//Chinese is not available for PDF language option
+export const PdfLanguageOptions: DropdownOption<LanguageKeys, string>[] =
+  languageOptions.filter((lang) => lang.value !== "chinese");
