@@ -31,9 +31,6 @@ export const TextSetting = (props: Props) => {
         <div>
           <DownloadPdf />
         </div>
-        <div>
-          <PrintPdfBtn />
-        </div>
       </div>
     </>
   );

@@ -37,7 +37,8 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 //-----store
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
-    reducer: persistedReducer,
+    // reducer: persistedReducer,  //Dev_Note: decided not to go with persist slice
+    reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         //--ignore all action types redux-persist dispatches (those actions are not serializable will cause redux-toolkit warning)

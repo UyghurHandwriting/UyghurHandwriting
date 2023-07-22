@@ -7,6 +7,7 @@ import { Header } from "../component/layout/Header/Header";
 import { WorksheetSettings } from "../component/TabCard/TabCard";
 import "./Home.scss";
 import Footer from "../component/layout/Footer/Footer";
+import { TextSetting } from "../component/WSheetSetting/TextSetting";
 type Props = {};
 
 export function Home({}: Props) {
@@ -24,10 +25,10 @@ export function Home({}: Props) {
             <PdfGenerator />
           </div>
           <div className="HomePage-worksheetSettings--container">
-            <WorksheetSettings />
+            {/* <WorksheetSettings /> */}
+            <TextSetting />
           </div>
         </VerticalTwoColumn>
-        <button onClick={handleClick}>Preview PDF</button>
       </div>
       <Footer />
     </div>

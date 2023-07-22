@@ -9,9 +9,9 @@ const rootNode = document.getElementById("root");
 if (rootNode) {
   createRoot(rootNode).render(
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <App />
-      </PersistGate>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+      <App />
+      {/* </PersistGate> */}
     </Provider>
   );
 }
