@@ -93,11 +93,15 @@ export const Dropdown = ({
     className?.option
   );
 
-  const handleChange = (
+  const handleMouseDown = (
     element: React.MouseEvent<HTMLSelectElement, MouseEvent>
   ) => {
     const target = element.target as HTMLOptionElement;
     handleClick(target.value);
+  };
+
+  const handleChange = (element: React.ChangeEvent<HTMLSelectElement>) => {
+    handleClick(element.target.value);
   };
 
   return (
@@ -116,7 +120,8 @@ export const Dropdown = ({
         size={size}
         id={componentId + "-select"}
         className={selectClassName}
-        onMouseDown={handleChange}
+        onMouseDown={!!size ? handleMouseDown : () => {}}
+        onChange={!size ? handleChange : (e) => {}}
         defaultValue={value}
       >
         {options.map((option) => (
