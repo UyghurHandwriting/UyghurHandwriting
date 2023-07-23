@@ -1,4 +1,6 @@
 @import "./component/style/common.scss";
+@import "./component/style/functions.scss";
+@import "./component/style/variables.scss";
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -17,4 +19,50 @@ textarea {
 
 textarea::-webkit-resizer {
   display: none;
+}
+
+/* Custom CSS to reset the default styles of the select element */
+select {
+  /* Reset box model properties */
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  /* Reset appearance */
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+
+  /* Reset styles for Firefox */
+  -moz-appearance: none;
+
+  /* Reset styles for Chrome, Safari, Edge, and Opera */
+  -webkit-appearance: none;
+
+  /* Reset styles for Internet Explorer and Microsoft Edge Legacy */
+  appearance: none;
+}
+
+/* Custom CSS to reset the default styles of the input element */
+input {
+  /* Reset box model properties */
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  /* Reset font styles */
+  font-family: inherit;
+  font-size: inherit;
+
+  /* Reset styles for Firefox */
+  -moz-appearance: none;
+
+  /* Reset styles for Chrome, Safari, Edge, and Opera */
+  -webkit-appearance: none;
+
+  /* Reset styles for Internet Explorer and Microsoft Edge Legacy */
+  appearance: none;
 }

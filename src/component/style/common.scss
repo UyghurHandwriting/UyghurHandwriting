@@ -1,5 +1,18 @@
 @import "./variables.scss";
 
+/* Comment styles to  */
+.DropdownSelect,
+.TextInputInput {
+  border: 1px solid $palette-gray-400;
+  height: size(3);
+  border-radius: size(0.5);
+  font-size: $font-size-text-sm3;
+  padding-left: size(1);
+  padding-right: size(1);
+  min-width: size(18);
+  text-align: center;
+}
+
 .pointer {
   cursor: pointer;
 }

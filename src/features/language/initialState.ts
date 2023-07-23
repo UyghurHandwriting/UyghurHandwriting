@@ -66,6 +66,7 @@ export type InitialLangState = {
   option57: Languages;
   option58: Languages;
   option59: Languages;
+  subtitle60: Languages;
 };
 
 export const initialLangState: InitialLangState = {
@@ -334,91 +335,91 @@ export const initialLangState: InitialLangState = {
   option47: {
     english: "Thinnest",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئەڭ نېپىز",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option48: {
     english: "Thin",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "نېپىز",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option49: {
     english: "Medium",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئوتتۇراھال ",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option50: {
     english: "Thick",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "قېلىن",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option51: {
     english: "Thickest",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئەڭ قېلىن",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option52: {
     english: "Lightest",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئەڭ يەڭگىل",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option53: {
     english: "Light",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "يەڭگىل",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option54: {
     english: "Dark",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "قاراڭغۇ",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option55: {
     english: "Darkest",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئەڭ قاراڭغۇ",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option56: {
     english: "Smallest",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئەڭ كىچىكى",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option57: {
     english: "Small",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "كىچىكى",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option58: {
     english: "Large",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "چوڭى",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
   option59: {
     english: "Largest",
     turkish: "turkish",
-    uyghur: "uyghur",
+    uyghur: "ئەڭ چوڭى",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },
@@ -475,6 +476,15 @@ export const initialLangState: InitialLangState = {
     english: "Alp ekran",
     turkish: "turkish",
     uyghur: "uyghur",
+    uyghurLatin: "uyghurLatin",
+    chinese: "chinese",
+  },
+
+  //NOT yet translated ----- all below-----
+  subtitle60: {
+    english: "Subtitle",
+    turkish: "turkish",
+    uyghur: "تارماق ماۋزۇ",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
   },

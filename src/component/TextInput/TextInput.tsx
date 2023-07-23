@@ -6,19 +6,26 @@ import { DirectionStyle, LanguageKeys } from "../../app/types";
 import {
   selectPdfLanguage,
   selectPdfRefresh,
+  selectPdfSubtitle1,
+  selectPdfSubtitle2,
   selectPdfTitle,
   setPdfRefresh,
+  setPdfSubtitle1,
+  setPdfSubtitle2,
   setPdfTitle,
 } from "../../features/pdf/pdfSlice";
 import { getPdfTextDirection } from "../../utils/pdf/getPdfTextDirection";
 import { RootState } from "../../app/store";
-import { selectRDropLabel23 } from "../../features/language/languageSlice";
+import {
+  selectRDropLabel23,
+  selectSubtitle60,
+} from "../../features/language/languageSlice";
 
 type ComponentProps = {
   componentId: string;
   classes?: string;
   placeholder?: string;
-  value: string;
+  value: string | undefined;
   hasTimeout?: boolean;
   label?: string;
 };
@@ -119,6 +126,54 @@ export const PdfTitleInput = connect(
     return {
       onChange: (value: string) => {
         dispatch(setPdfTitle(value));
+      },
+    };
+  }
+)(TextInput);
+
+//PdfSubtitle1
+export const PdfSubTitle1 = connect(
+  //-----mapProps
+  (state: RootState, ownProps: {}): ComponentProps => {
+    const labelText = selectSubtitle60(state);
+    const value = selectPdfSubtitle1(state);
+
+    return {
+      value: value,
+      componentId: "PdfSubtitle1",
+      label: labelText,
+      placeholder: "PDF subtitle 1",
+    };
+  },
+  //-----mapDispatch
+  (dispatch: Dispatch<any>) => {
+    return {
+      onChange: (value: string) => {
+        dispatch(setPdfSubtitle1(value));
+      },
+    };
+  }
+)(TextInput);
+
+//PdfSubtitle2
+export const PdfSubTitle2 = connect(
+  //-----mapProps
+  (state: RootState, ownProps: {}): ComponentProps => {
+    const labelText = selectSubtitle60(state);
+    const value = selectPdfSubtitle2(state);
+
+    return {
+      value: value,
+      componentId: "PdfSubtitle2",
+      label: labelText,
+      placeholder: "PDF subtitle2",
+    };
+  },
+  //-----mapDispatch
+  (dispatch: Dispatch<any>) => {
+    return {
+      onChange: (value: string) => {
+        dispatch(setPdfSubtitle2(value));
       },
     };
   }

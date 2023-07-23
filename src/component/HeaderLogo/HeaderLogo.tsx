@@ -13,6 +13,7 @@ export const HeaderLogo = () => {
       y="0px"
       viewBox="0 0 595.3 841.9"
       xmlSpace="preserve"
+      style={{ height: "600px" }}
     >
       <style type="text/css">
         {`.st0{fill:${logoColor};}

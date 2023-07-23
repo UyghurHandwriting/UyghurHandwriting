@@ -18,11 +18,14 @@ import {
 import { Dispatch } from "@reduxjs/toolkit";
 import "./Dropdown.scss";
 import {
+  selectBaselineSizeOptions,
+  selectBaselineWidthOptions,
   selectRCardTitle16,
   selectRDropLabel18,
   selectRDropLabel19,
   selectRDropLabel20,
   selectSiteLanguage,
+  selectTextOpacityOptions,
   setLangOptionOpen,
   setSiteLanguage,
 } from "../../features/language/languageSlice";
@@ -144,7 +147,10 @@ export const LanguageOption = connect(
     const value = selectSiteLanguage(state);
     return {
       options: languageOptions,
-      className: { group: "langueOptionStyle", select: "no-padding" },
+      className: {
+        group: "langueOptionStyle",
+        select: "no-padding langueOptionSelect",
+      },
       componentId: "LanguageOptions",
       size: languageOptions.length,
       value,
@@ -192,7 +198,7 @@ export const BaselineWidthOption = connect(
     const labelText = selectRDropLabel19(state);
     const value = selectPdfBaselineWidth(state);
     return {
-      options: baselineWidthOptions,
+      options: selectBaselineWidthOptions(state),
       componentId: "BaselineWidthOption",
       label: labelText,
       value,
@@ -216,7 +222,7 @@ export const TextOpacityOption = connect(
     const labelText = selectRDropLabel20(state);
     const value = selectPdfTextOpacity(state);
     return {
-      options: textOpacityOptions,
+      options: selectTextOpacityOptions(state),
       componentId: "TextOpacityOption",
       label: labelText,
       value,
@@ -240,7 +246,7 @@ export const BaselineSizeOption = connect(
     const value = selectPdfBaselineSize(state);
     const labelText = selectRDropLabel18(state);
     return {
-      options: baselineSizeOptions,
+      options: selectBaselineSizeOptions(state),
       componentId: "BaselineSizeOption",
       label: labelText,
       value,

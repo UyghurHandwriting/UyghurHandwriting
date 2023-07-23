@@ -10,12 +10,18 @@ import {
   BaselineSizeOption,
 } from "../Dropdown/Dropdown";
 import { DownloadPdf } from "../pdf/DownloadPdf";
-import { PdfTitleInput } from "../TextInput/TextInput";
+import {
+  PdfSubTitle1,
+  PdfSubTitle2,
+  PdfTitleInput,
+} from "../TextInput/TextInput";
 import { PrintPdfBtn } from "../Button/Button";
 type Props = {};
 
 export const TextSetting = (props: Props) => {
   const baselineText = useSelector(selectRCardTitle9);
+  const isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+
   return (
     <>
       <div className="TextSetting--TextAreaMain--container">
@@ -28,9 +34,12 @@ export const TextSetting = (props: Props) => {
         <TextOpacityOption />
         <BaselineSizeOption />
         <PdfTitleInput />
+        <PdfSubTitle1 />
+        <PdfSubTitle2 />
         <div>
           <DownloadPdf />
         </div>
+        <div>{!isFirefox && <PrintPdfBtn />}</div>
       </div>
     </>
   );

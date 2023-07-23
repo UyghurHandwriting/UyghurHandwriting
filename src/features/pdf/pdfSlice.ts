@@ -24,7 +24,9 @@ export type PdfInitialState = {
   text: string;
   baselineWidth: BaselineWidthKeys;
   textOpacity: TextOpacityKeys;
-  title: string;
+  title: string | undefined;
+  subTitle1: string | undefined;
+  subTitle2: string | undefined;
 };
 
 export const initialState: PdfInitialState = {
@@ -37,7 +39,9 @@ export const initialState: PdfInitialState = {
   baseLineGap: 10,
   baselineWidth: "MD",
   textOpacity: "MD",
-  title: "",
+  title: "Optional Title",
+  subTitle1: "Name",
+  subTitle2: "Class",
   text: "قىشدا كۈشمۈش پىشماسمىش، پىشسىمۇ كىشى يىمەسمىش.",
 };
 export const sliceKey = "pdf";
@@ -82,11 +86,19 @@ export const pdfSlice = createSlice({
     setShowToolbar: (state, action: PayloadAction<boolean>) => {
       state.showToolbar = action.payload;
     },
+    setPdfSubtitle1: (state, action: PayloadAction<string>) => {
+      state.subTitle1 = action.payload;
+    },
+    setPdfSubtitle2: (state, action: PayloadAction<string>) => {
+      state.subTitle2 = action.payload;
+    },
   },
 });
 
 //export reducers & selector
 export const {
+  setPdfSubtitle1,
+  setPdfSubtitle2,
   setPdfText,
   setPdfRefresh,
   setPdfFontStyleValue,
@@ -115,3 +127,7 @@ export const selectPdfBaselineWidth = (state: RootState) =>
   state[sliceKey].baselineWidth;
 export const selectPdfTextOpacity = (state: RootState) =>
   state[sliceKey].textOpacity;
+export const selectPdfSubtitle1 = (state: RootState) =>
+  state[sliceKey].subTitle1;
+export const selectPdfSubtitle2 = (state: RootState) =>
+  state[sliceKey].subTitle2;

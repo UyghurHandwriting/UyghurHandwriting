@@ -68,28 +68,29 @@ export const textOpacityOptions: DropdownOption<TextOpacityKeys, string>[] = [
   },
 ];
 
-export const baselineSizeOptions: DropdownOption<TextOpacityKeys, string>[] = [
-  {
-    value: "XS",
-    label: "Smallest",
-  },
-  {
-    value: "SM",
-    label: "Small",
-  },
-  {
-    value: "MD",
-    label: "Medium",
-  },
-  {
-    value: "LG",
-    label: "Large",
-  },
-  {
-    value: "XL",
-    label: "Largest",
-  },
-];
+export const baselineSizeOptions: DropdownOption<BaselineWidthKeys, string>[] =
+  [
+    {
+      value: "XS",
+      label: "Smallest",
+    },
+    {
+      value: "SM",
+      label: "Small",
+    },
+    {
+      value: "MD",
+      label: "Medium",
+    },
+    {
+      value: "LG",
+      label: "Large",
+    },
+    {
+      value: "XL",
+      label: "Largest",
+    },
+  ];
 
 export const languageOptions: DropdownOption<LanguageKeys, string>[] = [
   {

@@ -1,6 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { InitialLangState, initialLangState } from "./initialState";
-import { LanguageKeys, DropdownOption } from "../../app/types";
+import {
+  LanguageKeys,
+  DropdownOption,
+  BaselineWidthKeys,
+  TextOpacityKeys,
+} from "../../app/types";
 import { RootState } from "../../app/store";
 
 type InitialState = InitialLangState & {
@@ -82,6 +87,9 @@ export const selectRDropLabel20 = (state: RootState) =>
 export const selectRDropLabel23 = (state: RootState) =>
   selectLangText(state)("rDropLabel23");
 
+export const selectSubtitle60 = (state: RootState) =>
+  selectLangText(state)("subtitle60");
+
 export const selectRBtn12 = (state: RootState) =>
   selectLangText(state)("rBtn12");
 
@@ -153,6 +161,87 @@ export const selectLanguageOptions = (
     {
       value: "chinese",
       label: selectLangText(state)("option42"),
+    },
+  ];
+};
+
+export const selectBaselineWidthOptions = (
+  state: RootState
+): DropdownOption<BaselineWidthKeys>[] => {
+  return [
+    {
+      value: "XS",
+      label: selectLangText(state)("option47"),
+    },
+    {
+      value: "SM",
+      label: selectLangText(state)("option48"),
+    },
+    {
+      value: "MD",
+      label: selectLangText(state)("option49"),
+    },
+    {
+      value: "LG",
+      label: selectLangText(state)("option50"),
+    },
+    {
+      value: "XL",
+      label: selectLangText(state)("option51"),
+    },
+  ];
+};
+
+export const selectTextOpacityOptions = (
+  state: RootState
+): DropdownOption<TextOpacityKeys>[] => {
+  return [
+    {
+      value: "XS",
+      label: selectLangText(state)("option52"),
+    },
+    {
+      value: "SM",
+      label: selectLangText(state)("option53"),
+    },
+    {
+      value: "MD",
+      label: selectLangText(state)("option49"),
+    },
+    {
+      value: "LG",
+      label: selectLangText(state)("option54"),
+    },
+    {
+      value: "XL",
+      label: selectLangText(state)("option55"),
+    },
+  ];
+};
+
+export const selectBaselineSizeOptions = (
+  state: RootState
+): DropdownOption<BaselineWidthKeys>[] => {
+  return [
+    {
+      value: "XS",
+      label: selectLangText(state)("option56"),
+    },
+    {
+      value: "SM",
+      label: selectLangText(state)("option57"),
+    },
+    {
+      value: "MD",
+      label: selectLangText(state)("option49"),
+    },
+    {
+      value: "LG",
+      label: selectLangText(state)("option58"),
+    },
+    {
+      value: "XL",
+      label: selectLangText(state)("option59"),
     },
   ];
 };
