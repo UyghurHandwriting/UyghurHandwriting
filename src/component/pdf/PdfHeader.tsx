@@ -29,17 +29,20 @@ const styles = StyleSheet.create({
 });
 
 function PdfHeader() {
-  const { title, subTitle1, subTitle2 } = getPdfSlice();
+  const { title, subTitle1, subTitle2, languageStyle } = getPdfSlice();
   const hasSubTitle1 = !!subTitle1 && trim(subTitle1) !== "";
   const hasSubTitle2 = !!subTitle2 && trim(subTitle2) !== "";
+  const fontFamily = languageStyle.label;
 
   return (
     <View debug={false} fixed={true} style={styles.header}>
-      {title && <Text style={{ ...styles.headerText }}>{title}</Text>}
+      {title && (
+        <Text style={{ ...styles.headerText, fontFamily }}>{title}</Text>
+      )}
       <View debug={false} style={styles.subHeaderContainer}>
         {hasSubTitle1 && (
           <View style={styles.subHeaderGroup}>
-            <Text debug={false} style={styles.subHeaderText}>
+            <Text debug={false} style={{ ...styles.subHeaderText, fontFamily }}>
               {subTitle1}
             </Text>
             <View
@@ -53,7 +56,7 @@ function PdfHeader() {
             debug={false}
             style={{ ...styles.subHeaderGroup, marginLeft: "auto" }}
           >
-            <Text debug={false} style={styles.subHeaderText}>
+            <Text debug={false} style={{ ...styles.subHeaderText, fontFamily }}>
               {subTitle2}
             </Text>
             <View

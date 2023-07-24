@@ -9,13 +9,13 @@ import {
 import { RootState } from "../../app/store";
 
 type InitialState = InitialLangState & {
-  language: LanguageKeys;
+  language: LanguageKeys | undefined;
   langOptionOpen: boolean; //indicates in the language dropdown is open
 };
 
 export const initialState: InitialState = {
   ...initialLangState,
-  language: "english",
+  language: "english", //site language
   langOptionOpen: false,
 };
 export const sliceKey = "language";
@@ -48,7 +48,7 @@ export const selectSiteLanguage = (state: RootState) =>
 export const selectLangText =
   (state: RootState) =>
   (textKey: keyof InitialLangState): string => {
-    return thisSlice(state)[textKey][thisSlice(state).language];
+    return thisSlice(state)[textKey][thisSlice(state).language ?? "english"];
   };
 
 export const selectLangOptionOpen = (state: RootState) =>
@@ -144,6 +144,12 @@ export const selectOption59 = (state: RootState) =>
   selectLangText(state)("option59");
 export const selectPdfLang61 = (state: RootState) =>
   selectLangText(state)("pdfLang61");
+export const selectPdfTitle62 = (state: RootState) =>
+  selectLangText(state)("pdfTitle62");
+export const selectPdfTitle63 = (state: RootState) =>
+  selectLangText(state)("pdfTitle63");
+export const selectPdfTitle64 = (state: RootState) =>
+  selectLangText(state)("pdfTitle64");
 
 export const selectLanguageOptions = (
   state: RootState

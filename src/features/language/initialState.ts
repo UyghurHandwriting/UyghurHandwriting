@@ -68,6 +68,9 @@ export type InitialLangState = {
   option59: Languages;
   subtitle60: Languages;
   pdfLang61: Languages;
+  pdfTitle62: Languages;
+  pdfTitle63: Languages;
+  pdfTitle64: Languages;
 };
 
 export const initialLangState: InitialLangState = {
@@ -492,8 +495,29 @@ export const initialLangState: InitialLangState = {
   pdfLang61: {
     english: "Pdf Language",
     turkish: "pdf dili",
-    uyghur: "pdf تىلى",
+    uyghur: " تىلى pdf",
     uyghurLatin: "pdf tili",
     chinese: "pdf语言",
+  },
+  pdfTitle62: {
+    english: "Optional Title",
+    turkish: "İsteğe Bağlı Başlık",
+    uyghur: "ئىختىيارى ماۋزۇسى",
+    uyghurLatin: "ehtiyar mozu",
+    chinese: "可选标题",
+  },
+  pdfTitle63: {
+    english: "Name",
+    turkish: "isim",
+    uyghur: "ئىسىم",
+    uyghurLatin: "isim",
+    chinese: "姓名",
+  },
+  pdfTitle64: {
+    english: "Class",
+    turkish: "sınıf",
+    uyghur: "سىنىپ",
+    uyghurLatin: "sinip",
+    chinese: "班级",
   },
 };

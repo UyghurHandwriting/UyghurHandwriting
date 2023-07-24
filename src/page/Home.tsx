@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PdfGenerator } from "../component/pdf/PdfGenerator";
 import { VerticalTwoColumn } from "../component/layout/VerticalTwoColumn/VerticalTwoColumn";
 import { useDispatch } from "react-redux";
@@ -11,11 +11,6 @@ import { TextSetting } from "../component/WSheetSetting/TextSetting";
 type Props = {};
 
 export function Home({}: Props) {
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    dispatch(setPdfRefresh());
-  };
-
   return (
     <div className="">
       <Header />

@@ -1,8 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import {
-  TextOpacityValues,
-  BaselineWidthValues,
   DropdownOption,
   FontStyle,
   FontStyleKeys,
@@ -12,6 +10,7 @@ import {
   BaselineWidthKeys,
 } from "../../app/types";
 import { toNumber } from "lodash";
+import { getSamplePdfTitleText } from "../../utils/pdf/getSamplePdfTitleText";
 
 export type PdfInitialState = {
   showToolbar: boolean;
@@ -32,8 +31,8 @@ export type PdfInitialState = {
 export const initialState: PdfInitialState = {
   showToolbar: false,
   forceRefresh: false,
-  language: "uyghur",
-  languageStyle: { value: FontStyle.UKIJElipbe, label: "UKIJElipbe" },
+  language: "english",
+  languageStyle: { value: FontStyle.YsabeauInfant, label: "UKIJElipbe" },
   baseLineSize: "MD",
   baseLineColor: "rgba(103,102,102,255)",
   baseLineGap: 10,
@@ -99,7 +98,13 @@ export const pdfSlice = createSlice({
       state.subTitle2 = action.payload;
     },
     setPdfLanguage: (state, action: PayloadAction<LanguageKeys>) => {
+      const { title, subtitle1, subtitle2 } = getSamplePdfTitleText(
+        action.payload
+      );
       state.language = action.payload;
+      state.title = title;
+      state.subTitle1 = subtitle1;
+      state.subTitle2 = subtitle2;
     },
   },
 });

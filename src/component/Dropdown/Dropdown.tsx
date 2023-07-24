@@ -6,6 +6,7 @@ import {
   FontStyle,
   LanguageKeys,
   RowSize,
+  FontStyleKeys,
 } from "../../app/types";
 import React from "react";
 import { RootState } from "../../app/store";
@@ -45,6 +46,7 @@ import {
   selectPdfLanguage,
   setPdfLanguage,
   setPdfText,
+  selectPdfFontStyle,
 } from "../../features/pdf/pdfSlice";
 
 import { languageOptions } from "./dropdownOptions";
@@ -131,7 +133,8 @@ export const Dropdown = ({
         className={selectClassName}
         onMouseDown={!!size ? handleMouseDown : () => {}}
         onChange={!size ? handleChange : (e) => {}}
-        defaultValue={value}
+        // defaultValue={value}
+        value={value}
       >
         {options.map((option) => (
           <option
@@ -169,6 +172,9 @@ export const LanguageOption = connect(
       handleClick: (value: LanguageKeys) => {
         dispatch(setLangOptionOpen());
         dispatch(setSiteLanguage(value));
+        dispatch(setPdfLanguage(value));
+        dispatch(setPdfText(getSamplePdfText(value)));
+        dispatch(setPdfRefresh());
       },
     };
   }
