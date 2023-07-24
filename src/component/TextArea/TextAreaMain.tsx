@@ -11,6 +11,8 @@ import {
   setPdfText,
 } from "../../features/pdf/pdfSlice";
 import { getPdfTextDirection } from "../../utils/pdf/getPdfTextDirection";
+import { isUndefined } from "lodash";
+import { getSamplePdfText } from "../../utils/pdf/getSamplePdfText";
 
 type Props = {};
 
@@ -19,7 +21,13 @@ export const TextAreaMain = (props: Props) => {
   const pdfLanguage: LanguageKeys = useSelector(selectPdfLanguage);
   const textDirection: DirectionStyle = getPdfTextDirection(pdfLanguage);
   const componentClassName: string = classNames("textAreaMain", textDirection);
-  const textValue = useSelector(selectPdfText);
+  const textValue = (() => {
+    const text = useSelector(selectPdfText);
+    if (isUndefined(text)) {
+      dispatch(setPdfText(getSamplePdfText(pdfLanguage)));
+    }
+    return text;
+  })();
   const typingTimeout = useRef<number | undefined>(undefined);
   const refresh = useSelector(selectPdfRefresh);
 
@@ -50,6 +58,7 @@ export const TextAreaMain = (props: Props) => {
   return (
     <textarea
       value={textValue}
+      //TODO: maybe spell check is only false when it is not english
       spellCheck="false"
       onChange={handleTextChange}
       className={componentClassName}

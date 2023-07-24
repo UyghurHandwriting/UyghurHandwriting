@@ -21,7 +21,7 @@ export type PdfInitialState = {
   baseLineSize: RowSize;
   baseLineColor: string;
   baseLineGap: number;
-  text: string;
+  text: string | undefined;
   baselineWidth: BaselineWidthKeys;
   textOpacity: TextOpacityKeys;
   title: string | undefined;
@@ -42,7 +42,7 @@ export const initialState: PdfInitialState = {
   title: "Optional Title",
   subTitle1: "Name",
   subTitle2: "Class",
-  text: "قىشدا كۈشمۈش پىشماسمىش، پىشسىمۇ كىشى يىمەسمىش.",
+  text: undefined,
 };
 export const sliceKey = "pdf";
 export const pdfSlice = createSlice({
@@ -56,11 +56,17 @@ export const pdfSlice = createSlice({
       state.forceRefresh = !state.forceRefresh;
     },
     //!!!Dev_Note: We should never manually change PdfFontStyleLabel
-    setPdfFontStyleLabel: (state, action: PayloadAction<FontStyleKeys>) => {
+    setPdfLangStyleLabel: (state, action: PayloadAction<FontStyleKeys>) => {
       state.languageStyle.label = action.payload;
     },
-    setPdfFontStyleValue: (state, action: PayloadAction<FontStyle>) => {
+    setPdfLangStyleValue: (state, action: PayloadAction<FontStyle>) => {
       state.languageStyle.value = action.payload;
+    },
+    setPdfLangStyle: (
+      state,
+      action: PayloadAction<DropdownOption<FontStyle, FontStyleKeys>>
+    ) => {
+      state.languageStyle = action.payload;
     },
     setPdfFontStyle: (state, action: PayloadAction<FontStyle>) => {
       const keys = Object.keys(FontStyle) as Array<keyof typeof FontStyle>;
@@ -92,17 +98,22 @@ export const pdfSlice = createSlice({
     setPdfSubtitle2: (state, action: PayloadAction<string>) => {
       state.subTitle2 = action.payload;
     },
+    setPdfLanguage: (state, action: PayloadAction<LanguageKeys>) => {
+      state.language = action.payload;
+    },
   },
 });
 
 //export reducers & selector
 export const {
+  setPdfLanguage,
   setPdfSubtitle1,
   setPdfSubtitle2,
   setPdfText,
   setPdfRefresh,
-  setPdfFontStyleValue,
-  setPdfFontStyleLabel,
+  setPdfLangStyle,
+  setPdfLangStyleValue,
+  setPdfLangStyleLabel,
   setPdfFontStyle,
   setPdfBaselineWidth,
   setPdfTextOpacity,

@@ -14,12 +14,14 @@ import {
   baselineWidthOptions,
   fontStyleOption_uyghur,
   baselineSizeOptions,
+  pdfLanguageOptions,
 } from "./dropdownOptions";
 import { Dispatch } from "@reduxjs/toolkit";
 import "./Dropdown.scss";
 import {
   selectBaselineSizeOptions,
   selectBaselineWidthOptions,
+  selectPdfLang61,
   selectRCardTitle16,
   selectRDropLabel18,
   selectRDropLabel19,
@@ -40,9 +42,13 @@ import {
   selectPdfBaselineSize,
   selectPdfBaselineWidth,
   selectPdfTextOpacity,
+  selectPdfLanguage,
+  setPdfLanguage,
+  setPdfText,
 } from "../../features/pdf/pdfSlice";
 
 import { languageOptions } from "./dropdownOptions";
+import { getSamplePdfText } from "../../utils/pdf/getSamplePdfText";
 type HandleClick = (value: any) => void;
 type DropdownClassName = {
   group?: string;
@@ -141,6 +147,7 @@ export const Dropdown = ({
   );
 };
 
+//Site language dropdown
 export const LanguageOption = connect(
   //-----mapProps
   (state: RootState, ownProps: {}): ComponentProps => {
@@ -162,6 +169,31 @@ export const LanguageOption = connect(
       handleClick: (value: LanguageKeys) => {
         dispatch(setLangOptionOpen());
         dispatch(setSiteLanguage(value));
+      },
+    };
+  }
+)(Dropdown);
+
+//PDF language dropdown
+export const PdfLanguageOption = connect(
+  //-----mapProps
+  (state: RootState, ownProps: {}): ComponentProps => {
+    const value = selectPdfLanguage(state);
+    const label = selectPdfLang61(state);
+    return {
+      options: pdfLanguageOptions,
+      componentId: "PdfLanguageOptions",
+      value,
+      label,
+    };
+  },
+  //-----mapDispatch
+  (dispatch: Dispatch<any>) => {
+    return {
+      handleClick: (value: LanguageKeys) => {
+        dispatch(setPdfLanguage(value));
+        dispatch(setPdfText(getSamplePdfText(value)));
+        dispatch(setPdfRefresh());
       },
     };
   }

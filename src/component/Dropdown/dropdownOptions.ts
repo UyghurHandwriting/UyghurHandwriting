@@ -21,6 +21,13 @@ export const fontStyleOption_uyghur: DropdownOption<FontStyle>[] = [
   },
 ];
 
+export const fontStyleOption_english: DropdownOption<FontStyle>[] = [
+  {
+    value: FontStyle.YsabeauInfant,
+    label: "Ysabeau Infant",
+  },
+];
+
 export const baselineWidthOptions: DropdownOption<BaselineWidthKeys, string>[] =
   [
     {
@@ -112,5 +119,5 @@ export const languageOptions: DropdownOption<LanguageKeys, string>[] = [
 ];
 
 //Chinese is not available for PDF language option
-export const PdfLanguageOptions: DropdownOption<LanguageKeys, string>[] =
+export const pdfLanguageOptions: DropdownOption<LanguageKeys, string>[] =
   languageOptions.filter((lang) => lang.value !== "chinese");

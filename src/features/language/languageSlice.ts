@@ -142,6 +142,9 @@ export const selectOption58 = (state: RootState) =>
   selectLangText(state)("option58");
 export const selectOption59 = (state: RootState) =>
   selectLangText(state)("option59");
+export const selectPdfLang61 = (state: RootState) =>
+  selectLangText(state)("pdfLang61");
+
 export const selectLanguageOptions = (
   state: RootState
 ): DropdownOption<LanguageKeys>[] => {

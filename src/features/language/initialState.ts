@@ -67,6 +67,7 @@ export type InitialLangState = {
   option58: Languages;
   option59: Languages;
   subtitle60: Languages;
+  pdfLang61: Languages;
 };
 
 export const initialLangState: InitialLangState = {
@@ -487,5 +488,12 @@ export const initialLangState: InitialLangState = {
     uyghur: "تارماق ماۋزۇ",
     uyghurLatin: "uyghurLatin",
     chinese: "chinese",
+  },
+  pdfLang61: {
+    english: "Pdf Language",
+    turkish: "pdf dili",
+    uyghur: "pdf تىلى",
+    uyghurLatin: "pdf tili",
+    chinese: "pdf语言",
   },
 };

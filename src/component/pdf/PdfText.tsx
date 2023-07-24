@@ -8,6 +8,9 @@ import { getStyleLineTop } from "../../utils/pdf/getStyleLineTop";
 import { getRowGap } from "../../utils/pdf/getRowGap";
 import { getTextChunkSize } from "../../utils/pdf/getTextChunkSize";
 import { TextOpacity } from "../../app/types";
+import { getPdfTextDirection } from "../../utils/pdf/getPdfTextDirection";
+import { textDirection2align } from "../../utils/pdf/textDirection2align";
+import { toString } from "lodash";
 type Props = {};
 
 const styles = StyleSheet.create({
@@ -25,13 +28,16 @@ export const PdfText = ({}: Props) => {
     text: pdfText,
     languageStyle,
     textOpacity,
+    language,
   } = useMemo(() => getPdfSlice(), []);
   const fontSize = getPdfFontSize(baseLineSize);
   const top = getStyleLineTop(baseLineSize);
   const rowGap = getRowGap(baseLineSize);
   const chunkSize = getTextChunkSize(baseLineSize);
-  const text = splitText({ text: pdfText, chunkSize });
+  const text = splitText({ text: toString(pdfText), chunkSize });
   const fontFamily = languageStyle.label;
+  const textAlign = textDirection2align(getPdfTextDirection(language));
+
   return (
     <>
       {text.map((str, index) => {
@@ -45,6 +51,7 @@ export const PdfText = ({}: Props) => {
               style={{
                 ...styles.text,
                 fontSize,
+                textAlign,
                 top,
                 fontFamily,
                 opacity: TextOpacity[textOpacity],

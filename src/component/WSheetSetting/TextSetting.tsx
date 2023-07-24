@@ -8,6 +8,7 @@ import {
   BaselineWidthOption,
   FontStyleOption,
   BaselineSizeOption,
+  PdfLanguageOption,
 } from "../Dropdown/Dropdown";
 import { DownloadPdf } from "../pdf/DownloadPdf";
 import {
@@ -29,6 +30,7 @@ export const TextSetting = (props: Props) => {
       </div>
       <div className="TextSetting--settings--container">
         <p className="text-md">{baselineText} </p>
+        <PdfLanguageOption />
         <FontStyleOption />
         <BaselineWidthOption />
         <TextOpacityOption />

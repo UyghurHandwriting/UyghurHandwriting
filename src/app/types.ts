@@ -49,10 +49,22 @@ export interface DropdownOption<TValue = string, TLabel = string> {
   label: TLabel; //label is the UI display string
 }
 
+export enum FontStyleUyghur {
+  UKIJElipbe = 0,
+  UKIJElipbeChekitlik = 1,
+  AlpEkran = 2,
+}
+
+export enum FontStyleEnglish {
+  YsabeauInfant = 3,
+}
+
 export enum FontStyle {
   UKIJElipbe,
   UKIJElipbeChekitlik,
   AlpEkran,
+  YsabeauInfant,
 }
 
 export type FontStyleKeys = keyof typeof FontStyle;
+export type CSSTextAlign = "left" | "right" | "center" | "justify" | undefined;

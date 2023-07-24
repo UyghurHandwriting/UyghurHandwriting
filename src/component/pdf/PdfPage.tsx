@@ -5,6 +5,7 @@ import { PdfText } from "./PdfText";
 import PdfFooter from "./PdfFooter";
 import ukijelibech from "../../app/font/uyghur/ukijelipbech.ttf";
 import ukijelipbe from "../../app/font/uyghur/ukijelipbe.ttf";
+import ysabeau_infant from "../../app/font/english/YsabeauInfant-VariableFont_wght.ttf";
 import elp from "../../app/font/uyghur/alp.ttf";
 import { DropdownOption, FontStyleKeys } from "../../app/types";
 
@@ -20,6 +21,10 @@ const fontRegisterOpt: DropdownOption<any, FontStyleKeys>[] = [
   {
     value: elp,
     label: "AlpEkran",
+  },
+  {
+    value: ysabeau_infant,
+    label: "YsabeauInfant",
   },
 ];
 
