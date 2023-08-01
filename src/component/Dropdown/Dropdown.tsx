@@ -46,11 +46,11 @@ import {
   selectPdfLanguage,
   setPdfLanguage,
   setPdfText,
-  selectPdfFontStyle,
 } from "../../features/pdf/pdfSlice";
 
 import { languageOptions } from "./dropdownOptions";
 import { getSamplePdfText } from "../../utils/pdf/getSamplePdfText";
+import { getPdfFontOption } from "../../utils/pdf/getPdfFontOptions";
 type HandleClick = (value: any) => void;
 type DropdownClassName = {
   group?: string;
@@ -210,8 +210,10 @@ export const FontStyleOption = connect(
   (state: RootState, ownProps: {}): ComponentProps => {
     const labelText = selectRCardTitle16(state);
     const value = selectPdfLangStyle(state);
+    const options = getPdfFontOption(state.pdf.language);
+
     return {
-      options: fontStyleOption_uyghur,
+      options,
       className: { group: "FontStyleOptionStyle" },
       componentId: "FontStyleOption",
       label: labelText,
