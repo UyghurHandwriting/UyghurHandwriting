@@ -32,7 +32,7 @@ export const initialState: PdfInitialState = {
   showToolbar: false,
   forceRefresh: false,
   language: "english",
-  languageStyle: { value: FontStyle.YsabeauInfant, label: "UKIJElipbe" },
+  languageStyle: { value: FontStyle.YsabeauInfant, label: "YsabeauInfant" },
   baseLineSize: "MD",
   baseLineColor: "rgba(103,102,102,255)",
   baseLineGap: 10,
@@ -72,9 +72,8 @@ export const pdfSlice = createSlice({
       const label =
         keys.find((key) => FontStyle[key] === toNumber(action.payload)) ??
         "UKIJElipbe";
-
-      state.languageStyle.value = action.payload;
-      state.languageStyle.label = label;
+      setPdfLangStyleValue(action.payload);
+      setPdfLangStyleLabel(label);
     },
     setPdfBaselineWidth: (state, action: PayloadAction<BaselineWidthKeys>) => {
       state.baselineWidth = action.payload;

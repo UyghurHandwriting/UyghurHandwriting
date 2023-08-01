@@ -3,7 +3,6 @@ import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa";
 import "./Footer.scss";
 import { useSelector } from "react-redux";
 import {
-  selectFPhone35,
   selectFSubTitle34,
   selectFTitle33,
 } from "../../../features/language/languageSlice";

@@ -15,10 +15,9 @@ type Props = {};
 
 const styles = StyleSheet.create({
   text: {
-    textAlign: "right",
-    direction: "rtl",
     position: "relative",
     paddingRight: "8px",
+    fontWeight: "light",
   },
 });
 
@@ -49,11 +48,11 @@ export const PdfText = ({}: Props) => {
             <PdfBaseLine />
             <Text
               style={{
+                fontFamily,
                 ...styles.text,
                 fontSize,
                 textAlign,
                 top,
-                fontFamily,
                 opacity: TextOpacity[textOpacity],
               }}
             >

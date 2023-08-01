@@ -22,10 +22,11 @@ const fontRegisterOpt: DropdownOption<any, FontStyleKeys>[] = [
     value: elp,
     label: "AlpEkran",
   },
-  {
-    value: ysabeau_infant,
-    label: "YsabeauInfant",
-  },
+  //Dev_Note: registering none uyghur font separately with different font weight
+  // {
+  //   value: ysabeau_infant,
+  //   label: "YsabeauInfant",
+  // },
 ];
 
 fontRegisterOpt.forEach((font) => {
@@ -35,6 +36,23 @@ fontRegisterOpt.forEach((font) => {
     direction: "rtl",
   });
 });
+
+Font.register({
+  family: "YsabeauInfant",
+  src: ysabeau_infant,
+  direction: "ltl",
+  fontWeight: "light",
+});
+
+// {
+//   family: 'Lato',
+//   fonts: [
+//     { src: latoRegular },
+//     { src: latoItalic, fontStyle: 'italic' },
+//     { src: latoBold, fontWeight: 'bold' },
+//     { src: latoBlack, fontWeight: 'heavy' }
+//   ]
+// })
 
 const styles = StyleSheet.create({
   page: {
