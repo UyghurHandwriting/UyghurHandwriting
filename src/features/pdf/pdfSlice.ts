@@ -31,7 +31,7 @@ export type PdfInitialState = {
 export const initialState: PdfInitialState = {
   showToolbar: false,
   forceRefresh: false,
-  language: "english",
+  language: "uyghur",
   languageStyle: { value: FontStyle.YsabeauInfant, label: "UKIJElipbe" },
   baseLineSize: "MD",
   baseLineColor: "rgba(103,102,102,255)",
