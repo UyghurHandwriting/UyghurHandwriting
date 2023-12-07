@@ -3,6 +3,20 @@ import { splitWords } from "./splitWords";
 type Props = { text: string; chunkSize: number };
 
 export const splitText = ({ text, chunkSize }: Props): string[] => {
+  // Step 1: Split text by new line using splitByNewLine function
+  const lines: string[] = splitByNewLine(text);
+
+  // Step 2: Split each line by chunk size
+  const result: string[] = lines.reduce((acc: string[], line: string) => {
+    const lineChunks: string[] = splitBySize({ text: line, chunkSize });
+    return acc.concat(lineChunks);
+  }, []);
+
+  // Step 3: Return the final result
+  return result;
+};
+
+export const splitBySize = ({ text, chunkSize }: Props): string[] => {
   const spaceSplit: string[] = text.split(" ");
   //in the case where word exceeds chunkSize, split words
   const words: string[] = splitWords(spaceSplit, chunkSize);
@@ -33,4 +47,17 @@ export const splitText = ({ text, chunkSize }: Props): string[] => {
   }
 
   return result;
+};
+
+export const splitByNewLine = (text: string): string[] => {
+  var newLineRegex = /\r|\n/.exec(text);
+  if (newLineRegex) {
+    // Split the string where it has a new line
+    const lines = text.split(/\r?\n/);
+
+    // Return string array
+    return lines;
+  }
+  // Return an array with the entire text if no new line is found
+  return [text];
 };
