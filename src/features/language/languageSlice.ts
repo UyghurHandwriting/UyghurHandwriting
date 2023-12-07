@@ -15,7 +15,7 @@ type InitialState = InitialLangState & {
 
 export const initialState: InitialState = {
   ...initialLangState,
-  language: "english", //site language
+  language: "uyghur", //site language
   langOptionOpen: false,
 };
 export const sliceKey = "language";
