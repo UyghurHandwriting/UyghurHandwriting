@@ -38,9 +38,9 @@ export const initialState: PdfInitialState = {
   baseLineGap: 10,
   baselineWidth: "MD",
   textOpacity: "MD",
-  title: "Optional Title",
-  subTitle1: "Name",
-  subTitle2: "Class",
+  title: "تېما",
+  subTitle1: "ئىسىم",
+  subTitle2: "سىنىپ",
   text: undefined,
 };
 export const sliceKey = "pdf";

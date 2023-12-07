@@ -58,7 +58,7 @@ function PdfPage({}: Props) {
         <View style={styles.main}>
           <PdfText />
         </View>
-        <PdfFooter />
+        {/* <PdfFooter /> */}
       </Page>
     </Document>
   );
