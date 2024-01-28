@@ -10,13 +10,7 @@ import {
 } from "../../app/types";
 import React from "react";
 import { RootState } from "../../app/store";
-import {
-  textOpacityOptions,
-  baselineWidthOptions,
-  fontStyleOption_uyghur,
-  baselineSizeOptions,
-  pdfLanguageOptions,
-} from "./dropdownOptions";
+import { fontStyleOption_uyghur, pdfLanguageOptions } from "./dropdownOptions";
 import { Dispatch } from "@reduxjs/toolkit";
 import "./Dropdown.scss";
 import {
@@ -46,7 +40,6 @@ import {
   selectPdfLanguage,
   setPdfLanguage,
   setPdfText,
-  selectPdfFontStyle,
 } from "../../features/pdf/pdfSlice";
 
 import { languageOptions } from "./dropdownOptions";

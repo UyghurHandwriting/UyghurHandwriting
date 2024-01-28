@@ -1,7 +1,18 @@
+@import "../component/style/breakpoints.scss";
+
 .HomePage--container {
   margin-left: 10rem;
   margin-right: 10rem;
-  height: 100vh;
+  min-height: 100vh;
+  @include media(lg) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  @include media(md) {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .HomePage-pdfGenerator--container {

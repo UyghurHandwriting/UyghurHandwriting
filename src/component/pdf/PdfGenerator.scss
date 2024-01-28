@@ -1,5 +1,10 @@
 @import "../style/mixin.scss";
+@import "../style/breakpoints.scss";
 
 .pdfContainer {
   @include pdf-scale-letter(50);
+
+  @include media(md) {
+    @include pdf-scale-letter(30);
+  }
 }

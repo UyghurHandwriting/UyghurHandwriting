@@ -2,12 +2,15 @@
 
 .twoColumn {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-direction: row;
   > * {
     flex-basis: 50%;
   }
 
   @include media(md) {
+    flex-direction: column;
     > * {
       flex-basis: 100%;
     }
