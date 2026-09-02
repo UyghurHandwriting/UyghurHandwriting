@@ -71,6 +71,7 @@ export type InitialLangState = {
   pdfTitle62: Languages;
   pdfTitle63: Languages;
   pdfTitle64: Languages;
+  fCopyright65: Languages;
 };
 
 export const initialLangState: InitialLangState = {
@@ -519,5 +520,12 @@ export const initialLangState: InitialLangState = {
     uyghur: "سىنىپ",
     uyghurLatin: "sinip",
     chinese: "班级",
+  },
+  fCopyright65: {
+    english: "© {year} Uzhet. All rights preserved.",
+    turkish: "© {year} Uzhet. Tüm hakları saklıdır.",
+    uyghur: "© {year} Uzhet. بارلىق ھوقۇقلار قوغدالغان.",
+    uyghurLatin: "© {year} Uzhet. Barliq hoquqlar qoghdalghan.",
+    chinese: "© {year} Uzhet。版权所有。",
   },
 };

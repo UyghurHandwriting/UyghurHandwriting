@@ -39,3 +39,10 @@
     color: $color-primary-green;
   }
 }
+
+.Footer--copyright {
+  color: $color-primary-gray-dark;
+  font-size: $font-size-text-sm;
+  margin-top: size(2);
+  text-align: center;
+}

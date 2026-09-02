@@ -150,6 +150,8 @@ export const selectPdfTitle63 = (state: RootState) =>
   selectLangText(state)("pdfTitle63");
 export const selectPdfTitle64 = (state: RootState) =>
   selectLangText(state)("pdfTitle64");
+export const selectFCopyright65 = (state: RootState) =>
+  selectLangText(state)("fCopyright65");
 
 export const selectLanguageOptions = (
   state: RootState

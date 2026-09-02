@@ -6,11 +6,17 @@ import {
   selectFPhone35,
   selectFSubTitle34,
   selectFTitle33,
+  selectFCopyright65,
 } from "../../../features/language/languageSlice";
 
 const Footer: React.FunctionComponent = () => {
   const footerText1 = useSelector(selectFTitle33);
   const footerText2 = useSelector(selectFSubTitle34);
+  const copyrightTemplate = useSelector(selectFCopyright65);
+  const copyrightText = copyrightTemplate.replace(
+    "{year}",
+    String(new Date().getFullYear())
+  );
 
   return (
     <footer className="Footer">
@@ -26,6 +32,7 @@ const Footer: React.FunctionComponent = () => {
           <FaTwitter className="Footer--social-icon" />
           <FaInstagram className="Footer--social-icon" />
         </div>
+        <p className="Footer--copyright">{copyrightText}</p>
       </div>
     </footer>
   );
